@@ -1928,3 +1928,37 @@ freegifts.top
 
 x.93ne.com
 cdn.zry97.com
+
+# Reference: https://twitter.com/MalwarePatrol/status/1143382823002345472
+
+software.goop.co.il
+
+# Reference: https://twitter.com/MalwarePatrol/status/1146100756493328384
+
+fastsoft.onlinedown.net
+
+# Reference: https://twitter.com/MalwarePatrol/status/1147006698441334785
+
+tool1.91danji.com
+
+# Reference: https://twitter.com/MalwarePatrol/status/1147550303501324288
+
+irc-files.org
+
+# Reference: https://twitter.com/MalwarePatrol/status/1149543416478306304
+
+premium.roxypalace.com
+
+# Reference: https://twitter.com/MalwarePatrol/status/1151355352832716803
+
+getfreevideo.world
+
+# Reference: https://twitter.com/MalwarePatrol/status/1152080131550138368
+
+dl.xetapp.us
+
+# Reference: https://twitter.com/Paladin3161/status/1151809951762964480
+# Reference: https://www.virustotal.com/gui/file/aacadf7b3bfc2ac8a9a342e5372c77218efa9c67602c3a15441094170a5f52d4/detection
+
+dl.ludashi.com
+dlres-a.iyims.com

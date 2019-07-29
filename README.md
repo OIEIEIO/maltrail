@@ -1,6 +1,6 @@
 ![Maltrail](https://i.imgur.com/3xjInOD.png)
 
-[![Python 2.6|2.7](https://img.shields.io/badge/python-2.6|2.7-yellow.svg)](https://www.python.org/) [![License](https://img.shields.io/badge/license-MIT-red.svg)](https://github.com/stamparm/maltrail#license) [![Malware families](https://img.shields.io/badge/malware_families-791-orange.svg)](https://github.com/stamparm/maltrail/tree/master/trails/static/malware) [![Twitter](https://img.shields.io/badge/twitter-@maltrail-blue.svg)](https://twitter.com/maltrail)
+[![Python 2.6|2.7](https://img.shields.io/badge/python-2.6|2.7-yellow.svg)](https://www.python.org/) [![License](https://img.shields.io/badge/license-MIT-red.svg)](https://github.com/stamparm/maltrail#license) [![Malware families](https://img.shields.io/badge/malware_families-863-orange.svg)](https://github.com/stamparm/maltrail/tree/master/trails/static/malware) [![Twitter](https://img.shields.io/badge/twitter-@maltrail-blue.svg)](https://twitter.com/maltrail)
 
 ## Content
 
@@ -184,6 +184,15 @@ cat /var/log/maltrail/$(date +"%Y-%m-%d").log
 ```
 
 ![Test](https://i.imgur.com/NYJg6Kl.png)
+
+Also, to test the capturing of DNS traffic you can try the following:
+
+```
+nslookup morphed.ru
+cat /var/log/maltrail/$(date +"%Y-%m-%d").log
+```
+
+![Test2](https://i.imgur.com/62oafEe.png)
 
 To stop **Sensor** and **Server** instances (if running in background) execute the following:
 

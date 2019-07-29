@@ -2515,3 +2515,85 @@ comli.com
 # Reference: https://www.virustotal.com/gui/domain/comuf.com/relations
 
 comuf.com
+
+# Reference: https://www.virustotal.com/gui/domain/dnsabr.com/relations
+
+dnsabr.com
+
+# Reference: https://go.recordedfuture.com/hubfs/reports/cta-2019-0626.pdf
+# Reference: https://otx.alienvault.com/pulse/5d13cf4759eec0125b9d8ffa
+# Reference: https://www.virustotal.com/gui/domain/hopto.com/relations
+
+hopto.com
+
+# Reference: https://www.virustotal.com/gui/domain/fishdns.com/relations
+
+fishdns.com
+
+# Reference: https://www.virustotal.com/gui/domain/ra4wvpn.com/relations
+
+ra4wvpn.com
+
+# Reference: https://www.virustotal.com/gui/domain/dynamicdns.science/relations
+
+dynamicdns.science
+
+# Reference: https://www.virustotal.com/gui/domain/spdns.eu/relations
+
+spdns.eu
+
+# Reference: https://www.virustotal.com/gui/domain/spdns.de/relations
+
+spdns.de
+
+# Reference: https://www.virustotal.com/gui/domain/my-router.de/relations
+
+my-router.de
+
+# Reference: https://www.virustotal.com/gui/domain/my-gateway.de/relations
+
+my-gateway.de
+
+# Reference: https://www.virustotal.com/gui/domain/aidyn.net/relations
+
+aidyn.net
+
+# Reference: https://www.virustotal.com/gui/domain/feste-ip.net/relations
+
+feste-ip.net
+dynamisches-dns.de
+
+# Reference: https://www.virustotal.com/gui/domain/dnshome.de/relations
+# Reference: https://www.dnshome.de/index.php
+
+dyndns.icu
+dnshome.icu
+resolve.bar
+srvdns.de
+ddnssec.de
+dyndnssec.de
+dnshome.de
+
+# Reference: https://www.virustotal.com/gui/domain/freemyip.com/relations
+
+freemyip.com
+
+# Reference: https://www.virustotal.com/gui/domain/dynamic-m.com/relations
+
+dynamic-m.com
+
+# Reference: https://www.virustotal.com/gui/domain/mynetgear.com/relations
+
+mynetgear.com
+
+# Reference: https://www.virustotal.com/gui/domain/asuscomm.com/relations
+
+asuscomm.com
+
+# Reference: https://www.virustotal.com/gui/domain/urown.cloud/relations
+
+urown.cloud
+
+# Reference: https://www.virustotal.com/gui/domain/nerdpol.ovh/relations
+
+nerdpol.ovh

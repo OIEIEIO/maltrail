@@ -79,7 +79,6 @@ from core.settings import SUSPICIOUS_HTTP_REQUEST_FORCE_ENCODE_CHARS
 from core.settings import SUSPICIOUS_PROXY_PROBE_PRE_CONDITION
 from core.settings import SUSPICIOUS_UA_REGEX
 from core.settings import trails
-from core.settings import TRAILS_FILE
 from core.settings import VALID_DNS_CHARS
 from core.settings import VERSION
 from core.settings import WEB_SHELLS
@@ -153,6 +152,24 @@ def _check_domain(query, sec, usec, src_ip, src_port, dst_ip, dst_port, proto, p
     result = False
     if not _check_domain_whitelisted(query) and all(_ in VALID_DNS_CHARS for _ in query):
         parts = query.split('.')
+
+        if getattr(trails, "_regex", None):
+            match = re.search(trails._regex, query)
+            if match:
+                group, trail = [_ for _ in match.groupdict().items() if _[1] is not None][0]
+                candidate = trails._regex.split("(?P<")[int(group[1:]) + 1]
+                candidate = candidate.split('>', 1)[-1].rstrip('|')[:-1]
+                if candidate in trails:
+                    result = True
+                    trail = match.group(0)
+
+                    prefix, suffix = query[:match.start()], query[match.end():]
+                    if prefix:
+                        trail = "(%s)%s" % (prefix, trail)
+                    if suffix:
+                        trail = "%s(%s)" % (trail, suffix)
+
+                    log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, proto, TRAIL.DNS, trail, trails[candidate][0], trails[candidate][1]), packet)
 
         if ".onion." in query:
             trail = re.sub(r"(\.onion)(\..*)", r"\1(\2)", query)
@@ -276,14 +293,14 @@ def _process_packet(packet, sec, usec, ip_offset):
                     _last_logged_syn = _last_syn
                     if _ != _last_logged_syn:
                         trail = dst_ip if dst_ip in trails else "%s:%s" % (dst_ip, dst_port)
-                        log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, PROTO.TCP, TRAIL.IP if ':' not in trail else TRAIL.ADDR, trail, trails[trail][0], trails[trail][1]), packet)
+                        log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, PROTO.TCP, TRAIL.IP if ':' not in trail else TRAIL.IPORT, trail, trails[trail][0], trails[trail][1]), packet)
 
                 elif (src_ip in trails or "%s:%s" % (src_ip, src_port) in trails) and dst_ip != localhost_ip:
                     _ = _last_logged_syn
                     _last_logged_syn = _last_syn
                     if _ != _last_logged_syn:
                         trail = src_ip if src_ip in trails else "%s:%s" % (src_ip, src_port)
-                        log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, PROTO.TCP, TRAIL.IP if ':' not in trail else TRAIL.ADDR, trail, trails[trail][0], trails[trail][1]), packet)
+                        log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, PROTO.TCP, TRAIL.IP if ':' not in trail else TRAIL.IPORT, trail, trails[trail][0], trails[trail][1]), packet)
 
                 if config.USE_HEURISTICS:
                     if dst_ip != localhost_ip:
@@ -419,6 +436,9 @@ def _process_packet(packet, sec, usec, ip_offset):
                         checks = [path.rstrip('/')]
                         if '?' in path:
                             checks.append(path.split('?')[0].rstrip('/'))
+
+                            if '=' in path:
+                                checks.append(path[:path.index('=') + 1])
 
                         _ = os.path.splitext(checks[-1])
                         if _[1]:
@@ -580,7 +600,10 @@ def _process_packet(packet, sec, usec, ip_offset):
 
                             # Reference: http://en.wikipedia.org/wiki/List_of_DNS_record_types
                             if type_ not in (12, 28) and class_ == 1:  # Type not in (PTR, AAAA), Class IN
-                                if dst_ip in trails:
+                                if "%s:%s" % (dst_ip, dst_port) in trails:
+                                    trail = "%s:%s" % (dst_ip, dst_port)
+                                    log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, PROTO.UDP, TRAIL.IPORT, "%s (%s)" % (dst_ip, query), trails[trail][0], trails[trail][1]), packet)
+                                elif dst_ip in trails:
                                     log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, PROTO.UDP, TRAIL.IP, "%s (%s)" % (dst_ip, query), trails[dst_ip][0], trails[dst_ip][1]), packet)
                                 elif src_ip in trails:
                                     log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, PROTO.UDP, TRAIL.IP, src_ip, trails[src_ip][0], trails[src_ip][1]), packet)
@@ -731,7 +754,21 @@ def init():
             trails.clear()
             trails.update(_)
         elif not trails:
-            trails.update(load_trails())
+            _ = load_trails()
+            trails.update(_)
+
+        _regex = ""
+        for trail in trails:
+            if re.search(r"[\].][*+]|\[[a-z0-9_.\-]+\]", trail, re.I):
+                try:
+                    re.compile(trail)
+                except:
+                    pass
+                else:
+                    if re.escape(trail) != trail:
+                        _regex += "|(?P<g%s>%s)" % (_regex.count("(?P<g"), trail)
+
+        trails._regex = _regex.strip('|')
 
         thread = threading.Timer(config.UPDATE_PERIOD, update_timer)
         thread.daemon = True
@@ -742,9 +779,9 @@ def init():
 
     check_memory()
 
-    msg = "[i] using '%s' for trail storage" % TRAILS_FILE
-    if os.path.isfile(TRAILS_FILE):
-        mtime = time.gmtime(os.path.getmtime(TRAILS_FILE))
+    msg = "[i] using '%s' for trail storage" % config.TRAILS_FILE
+    if os.path.isfile(config.TRAILS_FILE):
+        mtime = time.gmtime(os.path.getmtime(config.TRAILS_FILE))
         msg += " (last modification: '%s')" % time.strftime(HTTP_TIME_FORMAT, mtime)
 
     print(msg)

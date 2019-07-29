@@ -4571,3 +4571,114 @@ gnway.com
 # Reference: https://www.virustotal.com/gui/domain/gnway.net/relations
 
 gnway.net
+
+# Reference: https://www.virustotal.com/gui/domain/wookhost.me/relations
+
+wookhost.me
+
+# Reference: https://twitter.com/MalwarePatrol/status/1141208495431311361
+# Reference: https://www.virustotal.com/gui/domain/tricheastuce.fr/relations
+
+tricheastuce.fr
+
+# Reference: https://www.virustotal.com/gui/domain/freedns.su/relations
+
+freedns.su
+
+# Reference: https://www.virustotal.com/gui/domain/fagdns.su/relations
+
+fagdns.su
+
+# Reference: https://www.virustotal.com/gui/domain/tinydns.xyz/details
+
+tinydns.xyz
+
+# Reference: https://www.virustotal.com/gui/domain/dynapoint.pw/relations
+
+dynapoint.pw
+
+# Reference: https://www.virustotal.com/gui/domain/dankdns.xyz/relations
+
+dankdns.xyz
+
+# Reference: https://www.virustotal.com/gui/domain/securedns.site/relations
+
+securedns.site
+
+# Reference: https://www.virustotal.com/gui/domain/fav.al/relations
+
+fav.al
+
+# Reference: https://www.virustotal.com/gui/domain/checkingsite.site/relations
+
+checkingsite.site
+
+# Reference: https://www.virustotal.com/gui/domain/essey.site/relations
+
+essey.site
+
+# Reference: https://www.virustotal.com/gui/domain/icodework.com/relations
+
+icodework.com
+
+# Reference: https://www.virustotal.com/gui/domain/dnainternet.fi/relations
+
+dnainternet.fi
+
+# Reference: https://www.virustotal.com/gui/domain/s.co/relations
+
+s.co
+
+# Reference: https://www.virustotal.com/gui/domain/dramacenter.xyz/relations
+
+dramacenter.xyz
+
+# Reference: https://www.virustotal.com/gui/domain/shadowrouting.xyz/relations
+
+shadowrouting.xyz
+
+# Reference: https://www.virustotal.com/gui/domain/csgoblock.com/relations
+
+csgoblock.com
+
+# Reference: https://www.virustotal.com/gui/domain/humboldtkush.tk/relations
+
+humboldtkush.tk
+
+# Reference: https://www.virustotal.com/gui/domain/hacked.sx/relations
+
+hacked.sx
+
+# Reference: https://www.virustotal.com/gui/domain/remotecamviewdnspublic.online/relations
+
+remotecamviewdnspublic.online
+
+# Reference: https://www.virustotal.com/gui/domain/mygoodsday.org/relations
+
+mygoodsday.org
+
+# Reference: https://www.virustotal.com/gui/domain/serveo.net/relations
+
+serveo.net
+
+# Reference: https://twitter.com/stvemillertime/status/1142604668322889729
+# Reference: https://www.virustotal.com/gui/ip-address/45.76.66.188/relations
+
+ejwft.co
+ggiso.co
+
+# Reference: https://www.virustotal.com/gui/domain/upgrinfo.com/relations
+
+upgrinfo.com
+
+# Reference: https://www.virustotal.com/gui/domain/metaldns.com/relations
+
+metaldns.com
+
+# Reference: https://www.virustotal.com/gui/domain/bcn-pool.us/relations
+
+bcn-pool.us
+
+# Reference: https://www.virustotal.com/gui/domain/killwaf.com/relations
+
+killwaf.com

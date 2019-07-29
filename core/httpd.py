@@ -50,7 +50,6 @@ from core.settings import SESSION_COOKIE_FLAG_SAMESITE
 from core.settings import SESSION_EXPIRATION_HOURS
 from core.settings import SESSION_ID_LENGTH
 from core.settings import SESSIONS
-from core.settings import TRAILS_FILE
 from core.settings import UNAUTHORIZED_SLEEP_TIME
 from core.settings import VERSION
 
@@ -222,6 +221,9 @@ def start_httpd(address=None, port=None, join=False, pem=None):
                         else:
                             del SESSIONS[session]
 
+            if retval is None and not config.USERS:
+                retval = AttribDict({"username": "?"})
+
             return retval
 
         def delete_session(self):
@@ -389,7 +391,7 @@ def start_httpd(address=None, port=None, join=False, pem=None):
             self.send_header(HTTP_HEADER.CONNECTION, "close")
             self.send_header(HTTP_HEADER.CONTENT_TYPE, "text/plain")
 
-            return open(TRAILS_FILE, "rb").read()
+            return open(config.TRAILS_FILE, "rb").read()
 
         def _ping(self, params):
             self.send_response(httplib.OK)

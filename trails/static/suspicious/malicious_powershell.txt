@@ -108,3 +108,35 @@
 /x12.ps1
 /xvid1.ps1
 /xvid2.ps1
+
+# Reference: https://twitter.com/h4ckak/status/1144173749056315392
+
+/shell.ps1
+
+# Reference: https://twitter.com/FewAtoms/status/1144636921437655041
+
+/GetPass.ps1
+/payload.ps1
+
+# Reference: https://twitter.com/JAMESWT_MHT/status/1149574068435218432
+
+/pps.ps1
+
+# Reference: https://twitter.com/James_inthe_box/status/1150418960464039936
+
+/ppx.ps1
+
+# Reference: https://twitter.com/ViriBack/status/1150758731371749377
+
+/qwerty.ps1
+/qwertyj1.ps1
+
+# Reference: https://twitter.com/James_inthe_box/status/1059087094612602881
+
+/posh80.ps1
+/posh443.ps1
+/samref448.ps1
+
+# Reference: https://twitter.com/James_inthe_box/status/1154398293524271104
+
+/out-1624020870.ps1

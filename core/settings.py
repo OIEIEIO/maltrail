@@ -20,18 +20,15 @@ from core.addr import make_mask
 from core.attribdict import AttribDict
 from core.trailsdict import TrailsDict
 
-config = AttribDict()
-trails = TrailsDict()
-
 NAME = "Maltrail"
-VERSION = "0.13.13"
+VERSION = "0.13.49"
 SERVER_HEADER = "%s/%s" % (NAME, VERSION)
 DATE_FORMAT = "%Y-%m-%d"
 ROTATING_CHARS = ('\\', '|', '|', '/', '-')
 TIMEOUT = 30
 FRESH_IPCAT_DELTA_DAYS = 10
 USERS_DIR = os.path.join(os.path.expanduser("~"), ".%s" % NAME.lower())
-TRAILS_FILE = os.path.join(USERS_DIR, "trails.csv")
+DEFAULT_TRAILS_FILE = os.path.join(USERS_DIR, "trails.csv")
 IPCAT_CSV_FILE = os.path.join(USERS_DIR, "ipcat.csv")
 IPCAT_SQLITE_FILE = os.path.join(USERS_DIR, "ipcat.sqlite")
 IPCAT_URL = "https://raw.githubusercontent.com/client9/ipcat/master/datacenters.csv"
@@ -78,7 +75,7 @@ LOCALHOST_IP = { 4: "127.0.0.1", 6: "::1" }
 IGNORE_DNS_QUERY_SUFFIXES = set(("arpa", "local", "guest", "intranet", "int"))
 VALID_DNS_CHARS = string.letters + string.digits + '-' + '.'  # Reference: http://stackoverflow.com/a/3523068
 SUSPICIOUS_CONTENT_TYPES = ("application/vnd.ms-htmlhelp", "application/x-bsh", "application/x-chm", "application/x-sh", "application/x-shellscript", "application/hta", "text/x-scriptlet", "text/x-sh", "text/x-shellscript")
-SUSPICIOUS_DIRECT_DOWNLOAD_EXTENSIONS = set((".apk", ".chm", ".egg", ".exe", ".hta", ".hwp", ".ps1", ".scr", ".sct"))
+SUSPICIOUS_DIRECT_DOWNLOAD_EXTENSIONS = set((".apk", ".chm", ".egg", ".exe", ".hta", ".hwp", ".pac", ".ps1", ".scr", ".sct"))
 WHITELIST_DIRECT_DOWNLOAD_KEYWORDS = ("cgi", "/scripts/", "/_vti_bin/", "/bin/", "/pub/softpaq/", "/bios/", "/pc-axis/")
 SUSPICIOUS_HTTP_REQUEST_REGEXES = (
     ("potential sql injection", r"information_schema|sysdatabases|sysusers|floor\(rand\(|ORDER BY \d+|\bUNION\s+(ALL\s+)?SELECT\b|\b(UPDATEXML|EXTRACTVALUE)\(|\bCASE[^\w]+WHEN.*THEN\b|\bWAITFOR[^\w]+DELAY\b|\bCONVERT\(|VARCHAR\(|\bCOUNT\(\*\)|\b(pg_)?sleep\(|\bSELECT\b.*\bFROM\b.*\b(WHERE|GROUP|ORDER)\b|\bSELECT \w+ FROM \w+|\b(AND|OR|SELECT)\b.*/\*.*\*/|/\*.*\*/.*\b(AND|OR|SELECT)\b|\b(AND|OR)[^\w]+\d+['\") ]?[=><]['\"( ]?\d+|ODBC;DRIVER|\bINTO\s+(OUT|DUMP)FILE"),
@@ -91,7 +88,8 @@ SUSPICIOUS_HTTP_REQUEST_REGEXES = (
     ("config file access", r"\.ht(access|passwd)|\bwp-config\.php"),
     ("potential remote code execution", r"\$_(REQUEST|GET|POST)\[|xp_cmdshell|\bping(\.exe)? -[nc] \d+|timeout(\.exe)? /T|wget http|sh /tmp/|cmd\.exe|/bin/bash|2>&1|\b(cat|ls) /|chmod [0-7]{3,4}\b|nc -l -p \d+|>\s*/dev/null|-d (allow_url_include|safe_mode|auto_prepend_file)"),
     ("potential directory traversal", r"(\.{2,}[/\\]+){3,}|/etc/(passwd|shadow|issue|hostname)|[/\\](boot|system|win)\.ini|[/\\]system32\b|%SYSTEMROOT%"),
-    ("potential web scan", r"(acunetix|injected_by)_wvs_|SomeCustomInjectedHeader|some_inexistent_file_with_long_name|testasp\.vulnweb\.com/t/fit\.txt|www\.acunetix\.tst|\.bxss\.me|thishouldnotexistandhopefullyitwillnot|OWASP%\d+ZAP|chr\(122\)\.chr\(97\)\.chr\(112\)|Vega-Inject|VEGA123|vega\.invalid|PUT-putfile|w00tw00t|muieblackcat")
+    ("potential web scan", r"(acunetix|injected_by)_wvs_|SomeCustomInjectedHeader|some_inexistent_file_with_long_name|testasp\.vulnweb\.com/t/fit\.txt|www\.acunetix\.tst|\.bxss\.me|thishouldnotexistandhopefullyitwillnot|OWASP%\d+ZAP|chr\(122\)\.chr\(97\)\.chr\(112\)|Vega-Inject|VEGA123|vega\.invalid|PUT-putfile|w00tw00t|muieblackcat"),
+    ("potential dns changer", r"\b(staticPriDns|staticSecDns|pppoePriDns|pppoeSecDns|wan_dns1|wan_dns2|dnsPrimary|dnsSecondary|dnsDynamic|dnsRefresh|DNS_FST|DNS_SND|dhcpPriDns|dhcpSecDns|dnsserver|dnsserver2)=")
 )
 SUSPICIOUS_HTTP_PATH_REGEXES = (
     ("non-existent page", r"defaultwebpage\.cgi"),
@@ -136,6 +134,9 @@ try:
     CPU_CORES = multiprocessing.cpu_count()
 except ImportError:
     CPU_CORES = 1
+
+config = AttribDict({"TRAILS_FILE": DEFAULT_TRAILS_FILE})
+trails = TrailsDict()
 
 def _get_total_physmem():
     retval = None
@@ -350,6 +351,11 @@ def read_config(config_file):
         PROXIES.update({"http": config.PROXY_ADDRESS, "https": config.PROXY_ADDRESS})
         opener = urllib2.build_opener(urllib2.ProxyHandler(PROXIES))
         urllib2.install_opener(opener)
+
+    if not config.TRAILS_FILE:
+        config.TRAILS_FILE = DEFAULT_TRAILS_FILE
+    else:
+        config.TRAILS_FILE = os.path.abspath(os.path.expanduser(config.TRAILS_FILE))
 
 def read_whitelist():
     WHITELIST.clear()

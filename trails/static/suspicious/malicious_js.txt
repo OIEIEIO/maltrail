@@ -453,3 +453,53 @@ jqueres.com
 # Reference: https://www.virustotal.com/gui/domain/jquery.su/relations
 
 jquery.su
+
+# Reference: https://myonlinesecurity.co.uk/more-agenttesla-keylogger-and-nanocore-rat-in-one-bundle/
+
+/mhtexp.js
+
+# Reference: https://twitter.com/david_jursa/status/1148199946618732544
+
+/add5.js
+
+# Reference: https://twitter.com/JayTHL/status/1149055957256802307
+
+click.clickanalytics208.com
+
+# Reference: https://thehackernews.com/2019/07/magecart-amazon-s3-hacking.html
+# Reference: https://www.zscaler.com/blogs/research/magecart-activity-and-campaign-enhancements
+
+/js/decor.js
+/js/lib/ccard.js
+
+# Reference: https://twitter.com/killamjr/status/1149301815529398272
+
+google.ssl.lnfo.cc
+
+# Reference: https://www.proofpoint.com/us/threat-insight/post/home-routers-under-attack-malvertising-windows-android-devices
+
+/zaqedcvfr.js
+/zaqwsxcde.js
+
+# Reference: https://decoded.avast.io/threatintel/router-exploit-kits-an-overview-of-routercsrf-attacks-and-dns-hijacking-in-brazil/
+
+/alfuncsync.js
+/fingerprint_db.js
+akibanoticias.com
+rotumal.com
+tharbadir.com
+cdn.t.co/sm.js
+cdn.popcash.net/pop.js
+widgets.outbrain.com/outbrain.js
+google-analytics.com/ga.js
+cdn.taboola.com/TaboolaCookieSyncScript.js
+
+# Reference: https://twitter.com/James_inthe_box/status/1150794193494630401
+
+/sharing_buttons.js
+
+# Reference: https://twitter.com/adrian__luca/status/1151393084380459009
+# Reference: https://app.any.run/tasks/61147c70-2def-4d72-aa32-4b1e45da1180/
+
+/k55qtf704vukk11a8r24riuuoc.js
+/pe0gecpi4ins56vi9kfrnh7kbs.js
