@@ -317,11 +317,6 @@ ukcoffe.com
 
 /Consulta FGTS.js
 
-# Reference: https://threatpost.com/card-skimming-google-analytics-angular/142264/
-
-google-analytics.cm/analytics.js
-gooqletagmanager.com/gtm.js
-
 # Reference: https://blog.sucuri.net/2018/12/localization-and-customization-of-credit-card-stealing-malware.html
 
 kinfirighbetted.host
@@ -470,7 +465,6 @@ click.clickanalytics208.com
 # Reference: https://www.zscaler.com/blogs/research/magecart-activity-and-campaign-enhancements
 
 /js/decor.js
-/js/lib/ccard.js
 
 # Reference: https://twitter.com/killamjr/status/1149301815529398272
 
@@ -486,13 +480,7 @@ google.ssl.lnfo.cc
 /alfuncsync.js
 /fingerprint_db.js
 akibanoticias.com
-rotumal.com
 tharbadir.com
-cdn.t.co/sm.js
-cdn.popcash.net/pop.js
-widgets.outbrain.com/outbrain.js
-google-analytics.com/ga.js
-cdn.taboola.com/TaboolaCookieSyncScript.js
 
 # Reference: https://twitter.com/James_inthe_box/status/1150794193494630401
 
@@ -503,3 +491,417 @@ cdn.taboola.com/TaboolaCookieSyncScript.js
 
 /k55qtf704vukk11a8r24riuuoc.js
 /pe0gecpi4ins56vi9kfrnh7kbs.js
+
+# Reference: https://blog.sucuri.net/2019/07/fake-google-domains-used-in-evasive-magento-skimmer.html
+# Reference: https://otx.alienvault.com/pulse/5d3f2283df812ea7458e98f8
+
+/3f5cf4657d5d9.js
+/5d32125dab5ee.js
+
+# Reference: https://blog.malwarebytes.com/threat-analysis/2019/07/exploit-kits-summer-2019-review/
+# Reference: https://otx.alienvault.com/pulse/5d40766ecabf3f345b3811db
+
+/e1cuqrhmik66gu7pr90qk9v3p8.js
+/ftp22vfljscml2370rsritui9g.js
+/tinyjs.min.js
+
+# Reference: https://twitter.com/smica83/status/1156485272617570304
+
+/factura.js
+
+# Reference: https://twitter.com/ScumBots/status/1157875582765535232
+
+http://156.236.102.78
+
+# Reference: https://twitter.com/securitydoggo/status/1158370884899495936
+
+/2019-National-Intelligence-Coordinating-Agency-Survey-Questionnaire.js
+
+# Reference: https://blog.malwarebytes.com/threat-analysis/2018/04/fakeupdates-campaign-leverages-multiple-website-platforms/
+
+boobahbabies.com
+eventsbysteph.com
+query.network
+connect.clevelandskin.net
+connect.clevelandskin.org
+track.amishbrand.com
+track.positiverefreshment.org
+link.easycounter210.com
+click.clickanalytics208.com
+/s_code.js?cid=
+
+# Reference: https://twitter.com/James_inthe_box/status/1159917575301582848
+
+/JFd0mx.js
+/rKPcLW.js
+
+# Reference: https://twitter.com/VK_Intel/status/1162434460731813893
+
+cloudflara.org
+
+
+# Reference: https://www.fireeye.com/blog/threat-research/2019/08/game-over-detecting-and-stopping-an-apt41-operation.html
+# Reference: https://www.virustotal.com/gui/ip-address/67.229.97.229/relations
+
+/pass_sqzr.jsp
+
+# Reference: https://twitter.com/JAMESWT_MHT/status/1164140106095177731
+# Reference: https://app.any.run/tasks/0c5278c0-d505-4873-b612-9318dbbc2733/
+
+/ajwngsj.js
+
+# Reference: https://twitter.com/JAMESWT_MHT/status/1167096432236650497
+
+/0f.js
+/1f.js
+/2f.js
+/3f.js
+/4f.js
+/5f.js
+/6f.js
+/7f.js
+/8f.js
+/9f.js
+
+# Reference: https://twitter.com/StopMalvertisin/status/1167121250847580162
+
+/msg_frr_w3.js
+/myjs28_frr_c1.js
+/myjs28_frr_s37.js
+
+# Reference: https://blog.talosintelligence.com/2019/08/rat-ratatouille-revrat-orcus.html
+
+/r2.js
+
+# Reference: https://twitter.com/killamjr/status/1171122456528150528
+
+tut-64.com
+yourservice.live
+0wnpr0m0.com
+
+# Reference: https://twitter.com/shotgunner101/status/1174324923499765760
+
+/5d7c50e85111d.js
+
+# Reference: https://www.ibm.com/downloads/cas/O3W1LZAZ
+
+/advnads20.js
+/test1ccf.js
+/test1try.js
+/test2try.js
+/test3ccf.js
+/test3try.js
+/test4ccf.js
+/test4try.js
+/tongji.js
+
+# Reference: https://www.microsoft.com/security/blog/2019/09/26/bring-your-own-lolbin-multi-stage-fileless-nodersok-campaign-delivers-rare-node-js-based-malware/
+
+/01sall.js
+/02sall.js
+/03sall.js
+/04sall.js
+/05sall.js
+/06sall.js
+/07sall.js
+/08sall.js
+/09sall.js
+/1566444384.js
+
+# Reference: https://twitter.com/killamjr/status/1178030065486974976
+
+allyouwant.online
+
+# Reference: https://twitter.com/killamjr/status/1178019676653146112
+
+/js/google.analytics.min.js
+
+# Reference: https://www.virustotal.com/gui/ip-address/162.222.213.20/relations
+
+/ikandej.js
+
+# Reference: https://github.com/advanced-threat-research/IOCs/blob/master/2010/2010-01-14-more-details-on-operation-aurora/more-details-on-operation-aurora.csv
+
+/GDSRScripts.js
+
+# Reference: https://twitter.com/0xFrost/status/1181153730382716928
+
+s04.hostcontent.live
+hostingcloud.racing
+/Iit5.js
+
+# Reference: https://otx.alienvault.com/pulse/5d9cadcab8eefffbac23367a
+# Reference: https://blog.sucuri.net/2017/05/fake-wordprssapi-stealing-cookies-and-hijacking-sessions.html
+# Reference: https://www.scmagazineuk.com/cookie-monster-malware-steals-cookies-hijacks-wordpress-sessions/article/1474671
+
+1.newor.net
+2.api.viralheadlines.net
+3.newor.net
+a01.u-ad.info
+abtrcking.com
+adrenalinecdn.com
+agrkings.com
+airjss.com
+andrewandjack.com
+api.behavioralmailing.com
+b.nwcdn.xyz
+beatchucknorris.com
+blozoo.net
+bwinpoker24.com
+c.radxcomm.com
+caphyon-analytics.com
+cdn.adpoints.media
+cdn.avrti.xyz
+cdn.echoenabled.com
+cdn.inaudium.com
+cdn.jquery.tools
+cdn.muse-widgets.ru
+cdn.owlcdn.com
+cfs.u-ad.info
+chat-client-js.firehoseapp.com
+cleantds.in
+code.jguery.org
+con1.sometimesfree.biz
+connect.f1call.com
+d0.histats.12mlbe.com
+da.adsvcs.com
+daljarrock.hurlinesswhitchurch.com
+dcts.pw
+dezaula.com
+dup.baidustatic.pw
+e.e708.net
+earsham.pontypriddcrick.com
+flipdigital.ru
+frompariswithhate.org
+gamescale.vio.rocks
+getsocialbuttons.xyz
+hmailserver.in
+hosted-oswa.org
+i.omeljs.info
+i.rfgdjs.info
+i.selectionlinksjs.info
+i3.putags.com
+ijquery9.com
+infinite-2.tcs3.co.uk
+infinite-3.tcs3.co.uk
+java.sometimesfree.biz
+jquery.im
+js.nster.net
+js.sn00.net
+js.trafficanalytics.online
+js2.sn00.net
+kanpianjs.top
+keit.kristofer.ga
+livestats.us
+log.widgetstat.net
+m.free-codes.org
+m.xfanclub.ru
+mediros.ru
+narnia.tcs3.co.uk
+nstracking.com
+oasagm82wioi.org
+onlinemarketplace.top
+ournet-analytics.com
+parts.kuru2jam.com
+pipardot.com
+rarstats.com
+s.orange81safe.com
+s1.omnitor.ru
+sbdtds.com
+script.affilizr.com
+sdb.dancewithme.biz
+seo101.net
+spartan-ntv.com
+src.dancewithme.biz
+srv1.clk-analytics.com
+st.segpress.io
+st.stadsvc.com
+stablemoney.ru
+stat.botthumb.com
+stat.rolledwil.biz
+static.bh-cdn.com
+tag.imaginaxs.com
+takoashi.net
+themes.affect.lt
+trafficapi.nl
+traffictrade.life
+upgraderservices.cf
+upskirt-jp.net
+w5983.lb.wa-track.com
+webstats.xcellenzy.com
+widgets.wowzio.net
+yourmsrp.com
+yys1982.com
+zirve100.com
+
+# Reference: https://twitter.com/david_jursa/status/1181925512798773249
+# Reference: https://app.any.run/tasks/14d9b5a2-d8d3-41f4-9557-f21aec01fa32/
+
+/xGpmLMHiaqCy-agu1ud6fHqKiTo.js
+
+# Reference: https://twitter.com/david_jursa/status/1183728660710338561
+
+/p8anm0bn388i8bg6sqcv0smlto.js
+/uqff1t6racoanqj092dg2q5bg8.js
+
+# Reference: https://twitter.com/MBThreatIntel/status/1184531791102857216
+
+/umbro.js
+
+# Reference: https://twitter.com/tkanalyst/status/1184840339070148609
+
+/5j76hga6tnpo7levlgmhrosuhs.js
+
+# Reference: https://twitter.com/killamjr/status/1184849581529616390
+
+/js/varien/mail.js
+
+# Reference: https://twitter.com/killamjr/status/1185376383180136448
+
+/media/si.js
+
+# Reference: https://twitter.com/GroupIB_GIB/status/1185230751769468928
+
+/js/mirasvit/
+
+# Reference: https://twitter.com/AffableKraut/status/1159677725994622976
+
+jquery.in.ua
+
+# Reference: https://twitter.com/Placebo52510486/status/1141619924512792583
+
+12js.org
+12lib.org
+16js.org
+16lib.org
+22js.org
+lib0.org
+wp11.org
+
+# Reference: https://blog.malwarebytes.com/threat-analysis/2019/10/the-forgotten-domain:-exploring-a-link-between-magecart-group-5-and-the-carbanak-apt/
+
+info-stat.ws
+
+# Reference: https://cyberweek.ae/materials/D4%20TRACK%202%20-%20APT%20Attacks%20On%20Crypto%20Exchange%20Employees%20-%20Heungsoo%20Kang.pdf
+
+analyticsfit.com
+
+# Reference: https://twitter.com/EKFiddle/status/1187034052227784704
+
+/lsdioss612ns.js
+
+# Reference: https://twitter.com/unmaskparasites/status/1181651764921155584
+# Reference: https://www.virustotal.com/gui/domain/humsoolt.net/relations
+
+humsoolt.net
+
+# Reference: https://twitter.com/tkanalyst/status/1190975614766833664
+
+/bootstrap.minfc4a.js
+/ghost-sdk.minfc4a.js
+/highlight.packfc4a.js
+/jflickrfeed.minfc4a.js
+/jquery.fitvidsfc4a.js
+/mainfc4a.js
+
+# Reference: https://blog.sucuri.net/2019/11/skimmers-for-both-magento-and-wordpress.html (# Credit Card Skimmer Injected in WordPress Core)
+
+/wp-includes/js/admin-bar.min.js
+/wp-includes/js/wp-util.min.js
+
+# Reference: https://wordpress.org/support/topic/malware-infected-file-wordpress-core-wp-includes-wp-tmp-php/
+# Reference: https://twitter.com/unmaskparasites/status/1181651764921155584
+
+/afu.php?zoneid=
+/apu.php?zoneid=
+
+# Reference: https://www.virustotal.com/gui/ip-address/104.151.24.95/relations
+# Reference: https://www.virustotal.com/gui/ip-address/128.14.150.144/relations
+
+/index_files/analytics.js
+/index_files/matc.js
+
+# Reference: https://twitter.com/xuy1202/status/1195701523797303296
+
+adsnet.work
+
+# Reference: https://twitter.com/killamjr/status/1198093080966115330
+
+boot-uprenewedintenselyproduct.icu
+
+# Reference: https://twitter.com/xuy1202/status/1199347607920734208
+
+ask-us.pro
+askus.mobi
+cheofaabridri.gq
+forumdownloadforall.mobi
+mykeitonly.info
+
+# Reference: https://twitter.com/xuy1202/status/1199595200949059584
+
+/js/jquery/advListRotator.js
+
+# Reference: https://twitter.com/nullcookies/status/1200576466150477824
+
+/js/faker_secrets.js
+
+# Reference: https://twitter.com/xuy1202/status/1201778263271436289
+
+cdn.buycongestion.com
+top.worldtraffic.com
+
+# Reference: https://twitter.com/gwillem/status/1201647716352380929
+
+sequracdn.net
+live.sequracdn.net
+/modrrnize.js
+
+# Reference: https://twitter.com/JCyberSec_/status/1201850074822778880
+
+/5c3a398f10058.js
+
+# Reference: https://twitter.com/JCyberSec_/status/1201850062994903045
+
+/jquery_noconflict.js
+
+# Reference: https://www.getastra.com/blog/911/how-magecart-attackers-are-continuing-to-affect-e-commerce-platforms/
+
+/js/everlast.js
+/js/mage.js
+
+# Reference: https://twitter.com/JCyberSec_/status/1202575691365191680
+# Reference: https://www.virustotal.com/gui/domain/marketplace-magento.com/relations
+# Reference: https://www.virustotal.com/gui/ip-address/181.214.86.150/relations
+# Reference: https://www.virustotal.com/gui/domain/phplib.net/relations
+
+/authoriz-getway.js
+/authorizenet-getway.js
+/BancesellaGetway.js
+/bancasella-getway.js
+/braintree-getway.js
+/direct-getway.js
+/gestpaypro-getway.js
+/PaymentGetway.js
+
+# Reference: https://twitter.com/gwillem/status/1202602117510451200
+
+2chat.top
+
+# Reference: https://twitter.com/JCyberSec_/status/1202903192192901120
+
+/js/AuthorizenetMagento.js
+
+# Reference: https://www.fortinet.com/blog/threat-research/inter-skimmer-for-all.html
+
+/vmartgo.js
+
+# Reference: https://twitter.com/xuy1202/status/1204778227517935616
+
+/2RuLm5ldHdvcmsx.js
+/9nRYFAGehAFJJ7u.js
+/klei53Wl6dT2bSF6S.js
+
+# Reference: https://twitter.com/ninoseki/status/1204971169658523649
+# Reference: https://www.virustotal.com/gui/ip-address/1.171.162.250/relations
+
+/user_info_uploader

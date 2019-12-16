@@ -1,22 +1,34 @@
-#!/usr/bin/env python2
+#!/usr/bin/env python
 
 """
 Copyright (c) 2014-2019 Maltrail developers (https://github.com/stamparm/maltrail/)
 See the file 'LICENSE' for copying permission
 """
 
+import sys
+
+from thirdparty import six
+
 class _(type):
    def __getattr__(self, attr):
      return attr
 
+@six.add_metaclass(_)
 class TRAIL(object):
-   __metaclass__ = _
+    pass
 
-class BLOCK_MARKER:
-    NOP = chr(0x00)
-    READ = chr(0x01)
-    WRITE = chr(0x02)
-    END = chr(0xFF)
+if sys.version_info >= (3, 0):
+    class BLOCK_MARKER:
+        NOP = 0x00
+        READ = 0x01
+        WRITE = 0x02
+        END = 0xff
+else:
+    class BLOCK_MARKER:
+        NOP = b'\x00'
+        READ = b'\x01'
+        WRITE = b'\x02'
+        END = b'\xff'
 
 class PROTO:
     TCP = "TCP"

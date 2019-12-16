@@ -1,4 +1,4 @@
-#!/usr/bin/env python2
+#!/usr/bin/env python
 
 """
 Copyright (c) 2014-2019 Maltrail developers (https://github.com/stamparm/maltrail/)
@@ -9,10 +9,12 @@ import gzip
 import os
 import re
 import tempfile
-import urllib2
 
 from core.settings import NAME
 from core.settings import TIMEOUT
+from core.settings import UNICODE_ENCODING
+from thirdparty import six
+from thirdparty.six.moves import urllib as _urllib
 
 __url__ = "https://osint.bambenekconsulting.com/feeds/dga-feed.txt"
 __check__ = "Domain used by"
@@ -22,8 +24,8 @@ def _open():
     retval = None
 
     try:
-        req = urllib2.Request(__url__, None, {"User-agent": NAME, "Accept-encoding": "gzip"})
-        resp = urllib2.urlopen(req, timeout=TIMEOUT)
+        req = _urllib.request.Request(__url__, None, {"User-agent": NAME, "Accept-encoding": "gzip"})
+        resp = _urllib.request.urlopen(req, timeout=TIMEOUT)
         handle, filename = tempfile.mkstemp()
 
         bsize = 1024 * 1024
@@ -52,8 +54,13 @@ def fetch():
         try:
             while True:
                 line = handle.readline()
+
                 if not line:
                     break
+
+                if six.PY3:
+                    line = line.decode(UNICODE_ENCODING)
+
                 match = re.search(r"\A([^,\s]+),Domain used by ([^ ]+)", line)
                 if match and '.' in match.group(1):
                     retval[match.group(1)] = ("%s dga (malware)" % match.group(2).lower(), __reference__)

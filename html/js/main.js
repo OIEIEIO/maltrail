@@ -2093,6 +2093,13 @@ function drawInfo(type) {
                 ticks[type].push(_[i][1] | 0);
             }
 
+            for (var i = ticks[type].length - 1; i >= 0; i--) {
+                if (ticks[type][i] === 0)
+                    ticks[type][i] = null;
+                else
+                    break;
+            }
+
             first = false;
 
             datasets.push(
@@ -2671,6 +2678,15 @@ function initVisual() {
                     sparklines[key].push(_HOURS[hour][key] | 0);
                 }
         }
+
+        for (var key in sparklines) {
+            for (var i = sparklines[key].length - 1; i >= 0; i--) {
+                if (sparklines[key][i] === 0)
+                    sparklines[key][i] = null;
+                else
+                    break;
+            }
+        }
     }
     else {
         for (var key in sparklines) {
@@ -2760,6 +2776,11 @@ function initVisual() {
 
     if (!found) {
         $('#events_sparkline').sparkline([], options);
+    }
+    else {
+        options.lineColor = "rgba(255, 255, 255, 0.25)";
+        options.lineWidth = 1;
+        $('#events_sparkline').sparkline([0, 0], options);
     }
 
     sum = 0;

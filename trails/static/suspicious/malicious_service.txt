@@ -5,10 +5,6 @@
 
 lofi.stream
 
-# Reference: https://twitter.com/suyog41/status/1117463616243023879
-
-atilla.vip
-
 # Reference: https://twitter.com/PhishingAi/status/1117780609688952832
 
 hvnc.info
@@ -229,3 +225,84 @@ darknetleaks.ru
 # Reference: https://www.virustotal.com/gui/file/5bb883d81954d10446a71fc8965f399c731bfccdfccdad738c12f1025b7b2a96/detection
 
 officeapplications.net
+
+# Reference: https://blog.team-cymru.com/2019/07/25/unmasking-ave_maria/
+
+warzone.io
+
+# Reference: https://twitter.com/david_jursa/status/1148607348610609152
+# Reference: https://pastebin.com/8BU6qfYB
+
+clearmatechecker.site
+d3s687mnstf2nl.cloudfront.net
+infoxxtechxx.gq
+stockmatejappzee.site
+
+# Reference: https://twitter.com/benkow_/status/1168598376977448960
+
+http://5.188.60.32
+
+# Reference: https://twitter.com/dave_daves/status/1169259923420659713
+
+http://157.245.71.111
+
+# Reference: https://twitter.com/adulau/status/1169300878345588742
+
+libc.so
+libc6.so
+
+# Reference: https://twitter.com/killamjr/status/1171122456528150528
+
+repairgreatlyquickfile.icu
+
+# Reference: https://twitter.com/Jan0fficial/status/1171157538970230786
+
+stressthem.to
+
+# Reference: https://unit42.paloaltonetworks.com/the-legend-of-adwind-a-commodity-rat-saga-in-eight-parts/
+
+indetectables.net
+
+# Reference: https://blog.talosintelligence.com/2017/08/chinese-online-ddos-platforms.html
+
+123ddos.net
+711ddos.cn
+794ddos.cn
+830ddos.top
+87ddos.cc
+91moyu.top
+941ddos.club
+aaajb.top
+bbddos.com
+caihongtangddos.cn
+ccddos.ml
+ddos.blue
+ddos.cx
+ddos.qv5.pw
+dk.ps88.org
+etddos.cn
+hackdd.cn
+hkddos.cn
+jtddos.me
+lnddos.cn
+minddos.club
+ppddos.club
+shashenddos.club
+tc4.pw
+tdddos.com
+the-dos.com
+this-ddos.cn
+tmddos.top
+wm-ddos.win
+xcbzy.club
+zfxcb.top
+
+# Reference: https://twitter.com/KaiDamon/status/1200801964570886145
+# Reference: https://pastebin.com/dNNJHjCi
+
+gezginbilgisayar.com
+
+# Generic
+
+crimemarket.net
+uploadvirus.com

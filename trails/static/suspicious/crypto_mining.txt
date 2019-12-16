@@ -176,3 +176,92 @@ system-check.services
 185.193.126.114:443
 185.193.126.114:8080
 82.221.139.161:8080
+
+# Reference: https://twitter.com/28bit/status/1159906315642253312
+
+121.42.151.137:28850
+
+# Reference: https://twitter.com/James_inthe_box/status/1165005466419658753
+
+3.120.209.58:8080
+
+# Reference: https://habr.com/ru/company/pt/blog/466877/ (Russian)
+
+154.16.67.133:80
+
+# Reference: https://twitter.com/Paladin3161/status/1171766464560238593
+# Reference: https://pastebin.com/YWXQFF3Q
+
+http://185.141.25.35
+solarray.club
+
+# Reference: https://twitter.com/pancak3lullz/status/1174012227130679297
+
+65.154.226.109:14100
+70.42.131.189:14100
+
+# Reference: https://blog.trendmicro.com/trendlabs-security-intelligence/fileless-cryptocurrency-miner-ghostminer-weaponizes-wmi-objects-kills-other-cryptocurrency-mining-payloads/
+
+pool.usa-138.com
+xmr.usa-138.com
+
+# Reference: https://twitter.com/MalwareTechBlog/status/1190730471321112577
+# Reference: https://otx.alienvault.com/pulse/5dbdf437299aea7cd396cd26
+# Reference: https://www.virustotal.com/gui/file/8a87a1261603af4d976faa57e49ebdd8fd8317e9dd13bd36ff2599d1031f53ce/detection
+# Reference: https://www.virustotal.com/gui/file/037dbddeda76d7a1be68a2b3098feabfbf5400a53e2606f5a0e445deb2e42959/detection
+
+5.100.251.106:52057
+
+# Reference: https://blog.netlab.360.com/mykings-the-botnet-behind-multiple-active-spreading-botnets/
+
+myxmr.pw
+xmr.5b6b7b.ru
+
+# Reference: https://www.virustotal.com/gui/file/f99833ef4d4bcb6cf9abcaee6edd3d1ba5b5825af4fd3f609654d343b137a8af/detection
+
+91.121.140.167:3333
+
+# Reference: https://www.accenture.com/_acnmedia/pdf-46/accenture-threat-analysis-monero-wannamine.pdf
+
+pool.supportxmr.com
+pool.minexmr.com
+pool.support
+pool.monero.hashvault.pro
+xmrpool.eu
+cryptonight-hub.miningpoolhub.com
+xmrpool.net
+xmr.nanopool.org
+mixpools.org
+minergate.com
+viaxmr.com
+moriaxmr.com
+xmr.suprnova.cc
+moneroocean.stream
+xmrpool.eu
+xmrpool.de
+poolto.be
+mineXMR.com
+xmr.prohash.net
+sheepman.mine.bz
+xmr.mypool.online
+bohemianpool.com
+moneropool.com
+moneropool.nl
+iwanttoearn.money
+pool.xmr.pt
+monero.crypto-pool.fr
+monero.miners.pro
+minercircle.com
+monero.lindon-pool.win
+cryptmonero.com
+teracycle.net
+ratchetmining.com
+dwarfpool.com
+monerohash.com
+monero.us.to
+usxmrpool.com
+xmrpool.xyz
+minemonero.gq
+alimabi.cn
+pooldd.com
+monero.riefly.id

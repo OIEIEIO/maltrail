@@ -209,3 +209,118 @@
 # Reference: https://twitter.com/James_inthe_box/status/1151156619733921792
 
 /8741161.hta
+
+# Reference: https://twitter.com/alex_lanstein/status/988851524406099968
+
+/LPOKGGTEFFGFJ.hta
+
+# Reference: https://twitter.com/FewAtoms/status/1159473273870196736
+
+/out-1379808530.hta
+
+# Reference: https://twitter.com/reecdeep/status/1159833486817034241
+
+/elnino.hta
+
+# Reference: https://twitter.com/w3ndige/status/1168437823193669632
+
+/2055970.hta
+
+# Reference: https://twitter.com/Zerophage1337/status/1007645365133246464
+
+/dwie.hta
+
+# Reference: https://otx.alienvault.com/pulse/5d7a4780d9dfe5be7ab9296e
+
+/Lfvbu0.hta
+/Msgxo0.hta
+/Qbjoo0.hta
+/Rjboi0.hta
+/Rnlnb0.hta
+/Vamva0.hta
+
+# Reference: https://twitter.com/rpsanch/status/1172548993177522176
+
+/ManTechJobs.hta
+
+# Reference: https://twitter.com/i/status/1172612874708996096
+
+/Tickets.hta
+
+# Reference: https://twitter.com/JAMESWT_MHT/status/1177115401400016901
+
+/Duxuu.hta
+/Duxuu0.hta
+
+# Reference: https://www.microsoft.com/security/blog/2019/09/26/bring-your-own-lolbin-multi-stage-fileless-nodersok-campaign-delivers-rare-node-js-based-malware/
+
+/Player1566444384.hta
+
+# Reference: https://twitter.com/h4ckak/status/1144173749056315392
+
+/startup.hta
+
+# Reference: https://twitter.com/FewAtoms/status/1180819300476755969
+
+/MS.hta
+/MSHTAPayload.hta
+/out-1302410780.hta
+/out-2091529197.hta
+/out-792744321.hta
+/out-932457051.hta
+/ppro.hta
+
+# Reference: https://www.anomali.com/blog/china-based-apt-mustang-panda-targets-minority-groups-public-and-private-sector-organizations
+# Reference: https://otx.alienvault.com/pulse/5d9c72d7e2efa3b5aa799b41
+
+/Mau2.hta
+
+# Reference: https://twitter.com/cyber__sloth/status/1181957000927727616
+
+/out-1369462999.hta
+/out-834610808.hta
+
+# Reference: https://twitter.com/w3ndige/status/1168437823193669632
+
+/2055970.hta
+
+# Reference: https://twitter.com/tkanalyst/status/1184825216033099777
+
+/SYUWSL1.hta
+
+# Reference: https://mp.weixin.qq.com/s/ujeIeb_BWoLWu420imwAOQ
+# Reference: https://otx.alienvault.com/pulse/5dad976536418494e8540014
+
+/hta1.hta
+
+# Reference: https://twitter.com/wwp96/status/1186622658751938560
+
+/out-1029000015.hta
+
+# Reference: https://twitter.com/tkanalyst/status/1196033182694379527
+
+/flusupdxx64.hta
+
+# Reference: https://twitter.com/FewAtoms/status/1198574338036969474
+
+/azo.hta
+/PO98989211.hta
+
+# Reference: https://twitter.com/cyber__sloth/status/1200005508641558528
+
+/out-1246717249.hta
+
+# Reference: https://app.any.run/tasks/c382b09f-03f7-4680-86c5-28316c5cc5e3/
+
+/microsoft.hta
+
+# Reference: https://twitter.com/wwp96/status/1202267925559808000
+
+/2206907.hta
+
+# Generic
+
+/myrrem.hta
+/out-1334992907.hta
+/out-1347051899.hta
+/out-849945592.hta

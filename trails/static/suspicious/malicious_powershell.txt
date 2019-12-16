@@ -140,3 +140,92 @@
 # Reference: https://twitter.com/James_inthe_box/status/1154398293524271104
 
 /out-1624020870.ps1
+
+# Reference: https://twitter.com/James_inthe_box/status/1148692646942015488
+# Reference: https://twitter.com/DynamicAnalysis/status/1162208563982241793
+
+/ACHPaymentAdvice.ps1
+/AMEXACHCREDITREF080819.ps1
+/AMEXPMTREF.ps1
+/CHASEACHPMT.ps1
+/PMTREFCHS191508.ps1
+/PaymentAdvice.ps1
+/PaymentCopy.ps1
+/PaymentDetails0348.ps1
+/PaymentRef.ps1
+/Remittance.ps1
+/RemittanceAdvice.ps1
+/RemittanceDetails.ps1
+/SupplierRemittanceDetails.ps1
+/WFACHPMT.ps1
+
+
+# Reference: https://www.fireeye.com/blog/threat-research/2019/08/game-over-detecting-and-stopping-an-apt41-operation.html
+# Reference: https://www.virustotal.com/gui/ip-address/67.229.97.229/relations
+
+/d2.ps1
+
+# Reference: https://blog.talosintelligence.com/2019/08/china-chopper-still-active-9-years-later.html
+# Reference: https://otx.alienvault.com/pulse/5d655ebc59a1b06f8c097c1f
+
+/6HqJB0SPQqbFbHJD/init.ps1
+
+# Reference: https://twitter.com/ItsReallyNick/status/1166889941844074496
+
+/abc.ps1
+/sc.ps1
+
+# Reference: https://twitter.com/killamjr/status/1167453693194752000
+
+/paymentinfo.ps1
+/PaymentDts.ps1
+/SecureTransDts.ps1
+
+# Reference: https://twitter.com/FewAtoms/status/1171076098244919297
+
+/out-1934240370.ps1
+
+# Reference: https://twitter.com/killamjr/status/1171849775911772165
+
+/remittance.ps1
+
+# Reference: https://www.bleepingcomputer.com/news/security/new-tortoiseshell-group-hacks-11-it-providers-to-reach-their-customers/
+
+/get-logon-history.ps1
+
+# Reference: https://twitter.com/VirITeXplorer/status/1181128795337773057
+
+/run.ps1
+
+# Reference: https://twitter.com/JAMESWT_MHT/status/1192451935225438209
+
+/asdg.ps1
+
+# Reference: https://twitter.com/0xFrost/status/1111247631223791617
+
+/Standoff8900.ps1
+
+# Reference: https://github.com/StrangerealIntel/CyberThreatIntel/blob/master/North%20Korea/APT/Lazarus/23-10-19/analysis.md
+
+/snphhuatvsbkw.ps1
+/sopiiubuvsclwukz.ps1
+
+# Reference: https://twitter.com/FewAtoms/status/1198574338036969474
+
+/ShellCode.ps1
+
+# Reference: https://app.any.run/tasks/717442d5-db0b-46b5-a0e9-5c3578471edd/
+
+/meow.ps1
+
+# Reference: https://twitter.com/cyber__sloth/status/1202274774342406144
+
+/out-2028772214.ps1
+
+# Reference: https://twitter.com/notajungman/status/1203034991858466817
+
+/amexdata.ps1
+
+# Reference: https://www.virustotal.com/gui/domain/worldwidetechsecurity.com/relations
+
+/securetransmission.ps1

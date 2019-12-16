@@ -1,9 +1,10 @@
-#!/usr/bin/env python2
+#!/usr/bin/env python
 
 """
 Copyright (c) 2014-2019 Maltrail developers (https://github.com/stamparm/maltrail/)
 See the file 'LICENSE' for copying permission
 """
+from __future__ import print_function
 
 import os
 import re
@@ -12,20 +13,22 @@ import stat
 import string
 import subprocess
 import sys
-import urllib
-import urllib2
 
 from core.addr import addr_to_int
 from core.addr import make_mask
 from core.attribdict import AttribDict
 from core.trailsdict import TrailsDict
+from thirdparty.six.moves import urllib as _urllib
 
 NAME = "Maltrail"
-VERSION = "0.13.49"
+VERSION = "0.16.164"
+PLATFORM = os.name
+IS_WIN = PLATFORM == "nt"
 SERVER_HEADER = "%s/%s" % (NAME, VERSION)
 DATE_FORMAT = "%Y-%m-%d"
 ROTATING_CHARS = ('\\', '|', '|', '/', '-')
 TIMEOUT = 30
+UNICODE_ENCODING = "utf8"
 FRESH_IPCAT_DELTA_DAYS = 10
 USERS_DIR = os.path.join(os.path.expanduser("~"), ".%s" % NAME.lower())
 DEFAULT_TRAILS_FILE = os.path.join(USERS_DIR, "trails.csv")
@@ -57,7 +60,7 @@ PING_RESPONSE = "pong"
 MAX_NOFILE = 65000
 CAPTURE_TIMEOUT = 100  # ms
 CONFIG_FILE = os.path.join(ROOT_DIR, "maltrail.conf")
-SYSTEM_LOG_DIR = "/var/log" if not subprocess.mswindows else "C:\\Windows\\Logs"
+SYSTEM_LOG_DIR = "/var/log" if not IS_WIN else "C:\\Windows\\Logs"
 DEFAULT_EVENT_LOG_PERMISSIONS = stat.S_IREAD | stat.S_IWRITE | stat.S_IRGRP | stat.S_IROTH
 DEFAULT_ERROR_LOG_PERMISSIONS = stat.S_IREAD | stat.S_IWRITE | stat.S_IRGRP | stat.S_IWGRP | stat.S_IROTH | stat.S_IWOTH
 HOSTNAME = socket.gethostname()
@@ -73,7 +76,7 @@ CONSONANTS = "bcdfghjklmnpqrstvwxyz"
 BAD_TRAIL_PREFIXES = ("127.", "192.168.", "localhost")
 LOCALHOST_IP = { 4: "127.0.0.1", 6: "::1" }
 IGNORE_DNS_QUERY_SUFFIXES = set(("arpa", "local", "guest", "intranet", "int"))
-VALID_DNS_CHARS = string.letters + string.digits + '-' + '.'  # Reference: http://stackoverflow.com/a/3523068
+VALID_DNS_NAME_REGEX = r"\A[a-zA-Z0-9.-]*\.[a-zA-Z0-9-]+\Z"  # Reference: http://stackoverflow.com/a/3523068
 SUSPICIOUS_CONTENT_TYPES = ("application/vnd.ms-htmlhelp", "application/x-bsh", "application/x-chm", "application/x-sh", "application/x-shellscript", "application/hta", "text/x-scriptlet", "text/x-sh", "text/x-shellscript")
 SUSPICIOUS_DIRECT_DOWNLOAD_EXTENSIONS = set((".apk", ".chm", ".egg", ".exe", ".hta", ".hwp", ".pac", ".ps1", ".scr", ".sct"))
 WHITELIST_DIRECT_DOWNLOAD_KEYWORDS = ("cgi", "/scripts/", "/_vti_bin/", "/bin/", "/pub/softpaq/", "/bios/", "/pc-axis/")
@@ -86,10 +89,10 @@ SUSPICIOUS_HTTP_REQUEST_REGEXES = (
     ("potential xxe injection", r"\[<!ENTITY"),
     ("potential data leakage", r"im[es]i=\d{15}|(mac|sid)=([0-9a-f]{2}:){5}[0-9a-f]{2}|sim=\d{20}|([a-z0-9_.+-]+@[a-z0-9-.]+\.[a-z]+\b.{0,100}){4}"),
     ("config file access", r"\.ht(access|passwd)|\bwp-config\.php"),
-    ("potential remote code execution", r"\$_(REQUEST|GET|POST)\[|xp_cmdshell|\bping(\.exe)? -[nc] \d+|timeout(\.exe)? /T|wget http|sh /tmp/|cmd\.exe|/bin/bash|2>&1|\b(cat|ls) /|chmod [0-7]{3,4}\b|nc -l -p \d+|>\s*/dev/null|-d (allow_url_include|safe_mode|auto_prepend_file)"),
+    ("potential remote code execution", r"\$_(REQUEST|GET|POST)\[|xp_cmdshell|shell_exec|\bping(\.exe)? -[nc] \d+|timeout(\.exe)? /T|wget http|curl -O|sh /tmp/|cmd\.exe|/bin/bash|2>&1|\b(cat|ls) /|chmod [0-7]{3,4}\b|chmod +x\b|nc -l -p \d+|>\s*/dev/null|-d (allow_url_include|safe_mode|auto_prepend_file)"),
     ("potential directory traversal", r"(\.{2,}[/\\]+){3,}|/etc/(passwd|shadow|issue|hostname)|[/\\](boot|system|win)\.ini|[/\\]system32\b|%SYSTEMROOT%"),
     ("potential web scan", r"(acunetix|injected_by)_wvs_|SomeCustomInjectedHeader|some_inexistent_file_with_long_name|testasp\.vulnweb\.com/t/fit\.txt|www\.acunetix\.tst|\.bxss\.me|thishouldnotexistandhopefullyitwillnot|OWASP%\d+ZAP|chr\(122\)\.chr\(97\)\.chr\(112\)|Vega-Inject|VEGA123|vega\.invalid|PUT-putfile|w00tw00t|muieblackcat"),
-    ("potential dns changer", r"\b(staticPriDns|staticSecDns|pppoePriDns|pppoeSecDns|wan_dns1|wan_dns2|dnsPrimary|dnsSecondary|dnsDynamic|dnsRefresh|DNS_FST|DNS_SND|dhcpPriDns|dhcpSecDns|dnsserver|dnsserver2)=")
+    ("potential dns changer", r"\b(staticPriDns|staticSecDns|staticThiDns|PriDnsv6|SecDnsv6|ThiDnsv6|staticPriDnsv6|staticSecDnsv6|staticThiDnsv6|pppoePriDns|pppoeSecDns|wan_dns1|wan_dns2|dnsPrimary|dnsSecondary|dnsDynamic|dnsRefresh|DNS_FST|DNS_SND|dhcpPriDns|dhcpSecDns|dnsserver|dnsserver1|dnsserver2|dns_server_ip_1|dns_server_ip_2|dns_server_ip_3|dns_server_ip_4|dns1|dns2|dns3|dns4|dns1_1|dns1_2|dns1_3|dns1_4|dns2_1|dns2_2|dns2_3|dns2_4|wan_dns_x|wan_dns1_x|wan_dns2_x|wan_dns3_x|wan_dns4_x|dns_status|p_DNS|a_DNS|uiViewDns1Mark|uiViewDns2Mark|uiViewDNSRelay|is_router_as_dns|Enable_DNSFollowing|domainserverip|DSEN|DNSEN|dnsmode|dns%5Bserver1%5D|dns%5Bserver2%5D)=")
 )
 SUSPICIOUS_HTTP_PATH_REGEXES = (
     ("non-existent page", r"defaultwebpage\.cgi"),
@@ -97,15 +100,16 @@ SUSPICIOUS_HTTP_PATH_REGEXES = (
 )
 SUSPICIOUS_HTTP_REQUEST_PRE_CONDITION = ("?", "..", ".ht", "=", " ", "'")
 SUSPICIOUS_PROXY_PROBE_PRE_CONDITION = ("probe", "proxy", "echo", "check")
-SUSPICIOUS_HTTP_REQUEST_FORCE_ENCODE_CHARS = dict((_, urllib.quote(_)) for _ in "( )\r\n")
+SUSPICIOUS_HTTP_REQUEST_FORCE_ENCODE_CHARS = dict((_, _urllib.parse.quote(_)) for _ in "( )\r\n")
 SUSPICIOUS_UA_REGEX = ""
 OBSOLETE_UA_REGEX = r"(?i)windows NT [3-5]\.\d+|windows (3\.\d+|95|98|xp)|MSIE [1-6]\.\d+|Navigator/|Safari/[1-4]|Opera/[1-3]|Firefox/1?[0-9]\."
+GENERIC_SINKHOLE_REGEX = r"(?im)^(X-Sinkhole|Server): (malware-?)?sinkhole|\bSinkholed? by |^(X-Sinkholed?(-Domain)?|X-Zinkhole|X-Sinkhole):| a malware sinkhole|\bSinkhole( Project)?</title>|This is a sinkhole|bots party hard|computers connecting to this sinkhole| Sinkhole by |^Set-Cookie: snkz=|^Server: Apache [0-9.]+/SinkSoft|^Location:[^\n]+\.sinkdns\.org:80"
 WEB_SHELLS = set()
 WORST_ASNS = {}
 BOGON_RANGES = {}
 CDN_RANGES = {}
 WHITELIST_HTTP_REQUEST_PATHS = ("fql", "yql", "ads", "../images/", "../themes/", "../design/", "../scripts/", "../assets/", "../core/", "../js/", "/gwx/")
-WHITELIST_UA_KEYWORDS = ("AntiVir-NGUpd", "TMSPS", "AVGSETUP", "SDDS", "Sophos", "Symantec", "internal dummy connection")
+WHITELIST_UA_REGEX = r"AntiVir\-NGUpd|TMSPS|AVGSETUP|SDDS|Sophos|Symantec|internal dummy connection|Microsoft\-CryptoAPI"
 WHITELIST_LONG_DOMAIN_NAME_KEYWORDS = ("blogspot",)
 SESSIONS = {}
 NO_SUCH_NAME_COUNTERS = {}  # this won't be (expensive) shared in multiprocessing run (hence, the threshold will effectively be n-times higher)
@@ -119,7 +123,7 @@ MMAP_ZFILL_CHUNK_LENGTH = 1024 * 1024
 DAILY_SECS = 24 * 60 * 60
 DNS_EXHAUSTION_THRESHOLD = 1000
 SUSPICIOUS_DOMAIN_LENGTH_THRESHOLD = 24
-SUSPICIOUS_DOMAIN_CONSONANT_THRESHOLD = 7
+SUSPICIOUS_DOMAIN_CONSONANT_THRESHOLD = 9
 SUSPICIOUS_DOMAIN_ENTROPY_THRESHOLD = 3.5
 WHITELIST = set()
 WHITELIST_RANGES = set()
@@ -142,7 +146,7 @@ def _get_total_physmem():
     retval = None
 
     try:
-        if subprocess.mswindows:
+        if IS_WIN:
             import ctypes
 
             kernel32 = ctypes.windll.kernel32
@@ -209,7 +213,7 @@ def _get_total_physmem():
     return retval
 
 def check_memory():
-    print "[?] at least %dMB of free memory required" % (CHECK_MEMORY_SIZE / 1024 / 1024)
+    print("[?] at least %dMB of free memory required" % (CHECK_MEMORY_SIZE // (1024 * 1024)))
     try:
         _ = '0' * CHECK_MEMORY_SIZE
     except MemoryError:
@@ -221,13 +225,13 @@ def read_config(config_file):
     if not os.path.isfile(config_file):
         exit("[!] missing configuration file '%s'" % config_file)
     else:
-        print "[i] using configuration file '%s'" % config_file
+        print("[i] using configuration file '%s'" % config_file)
 
     config.clear()
 
     try:
         array = None
-        content = open(config_file, "rb").read()
+        content = open(config_file, "r").read()
 
         for line in content.split("\n"):
             line = line.strip('\r')
@@ -323,10 +327,13 @@ def read_config(config_file):
         exit("[!] usage of configuration value 'UDP_PORT' requires also usage of 'UDP_ADDRESS'")
 
     if not str(config.HTTP_PORT or "").isdigit():
-        exit("[!] invalid configuration value for 'HTTP_PORT' ('%s')" % config.HTTP_PORT)
+        exit("[!] invalid configuration value for 'HTTP_PORT' ('%s')" % ("" if config.HTTP_PORT is None else config.HTTP_PORT))
 
-    if config.PROCESS_COUNT and subprocess.mswindows:
-        print "[x] multiprocessing is currently not supported on Windows OS"
+    if not str(config.UPDATE_PERIOD or "").isdigit():
+        exit("[!] invalid configuration value for 'UPDATE_PERIOD' ('%s')" % ("" if config.UPDATE_PERIOD is None else config.UPDATE_PERIOD))
+
+    if config.PROCESS_COUNT and IS_WIN:
+        print("[x] multiprocessing is currently not supported on Windows OS")
         config.PROCESS_COUNT = 1
 
     if config.CAPTURE_BUFFER:
@@ -339,23 +346,26 @@ def read_config(config_file):
             physmem = _get_total_physmem()
 
             if physmem:
-                config.CAPTURE_BUFFER = physmem * int(re.search(r"(\d+)%", config.CAPTURE_BUFFER).group(1)) / 100
+                config.CAPTURE_BUFFER = physmem * int(re.search(r"(\d+)%", config.CAPTURE_BUFFER).group(1)) // 100
             else:
                 exit("[!] unable to determine total physical memory. Please use absolute value for 'CAPTURE_BUFFER'")
         else:
             exit("[!] invalid configuration value for 'CAPTURE_BUFFER' ('%s')" % config.CAPTURE_BUFFER)
 
-        config.CAPTURE_BUFFER = config.CAPTURE_BUFFER / BLOCK_LENGTH * BLOCK_LENGTH
+        config.CAPTURE_BUFFER = config.CAPTURE_BUFFER // BLOCK_LENGTH * BLOCK_LENGTH
 
     if config.PROXY_ADDRESS:
         PROXIES.update({"http": config.PROXY_ADDRESS, "https": config.PROXY_ADDRESS})
-        opener = urllib2.build_opener(urllib2.ProxyHandler(PROXIES))
-        urllib2.install_opener(opener)
+        opener = _urllib.request.build_opener(_urllib.request.ProxyHandler(PROXIES))
+        _urllib.request.install_opener(opener)
 
     if not config.TRAILS_FILE:
         config.TRAILS_FILE = DEFAULT_TRAILS_FILE
     else:
         config.TRAILS_FILE = os.path.abspath(os.path.expanduser(config.TRAILS_FILE))
+
+    if int(os.environ.get("MALTRAIL_DREI", 0)) > 0:
+        config.SHOW_DEBUG = True
 
 def read_whitelist():
     WHITELIST.clear()
@@ -427,8 +437,15 @@ def read_ua():
                 line = line.strip()
                 if not line or line.startswith('#'):
                     continue
+                elif " (compatible" in line:
+                    line = re.escape(line)
                 else:
-                    items.append(line)
+                    try:
+                        re.compile(line)
+                    except:
+                        line = re.escape(line)
+
+                items.append(line)
 
     if items:
         SUSPICIOUS_UA_REGEX = "(?i)%s" % '|'.join(items)

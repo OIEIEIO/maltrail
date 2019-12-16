@@ -5,6 +5,12 @@
 .su
 .tt
 .ws
+.xyz
+.pw
+.tk
+.cf
+.gq
+.icu
 
 # Reference: http://www.freenom.com/en/index.html
 
@@ -46,35 +52,10 @@
 .de.lv
 .biz.ly
 
-# Reference: http://readwrite.com/2010/10/27/the_worlds_most_dangerous_domains
-
-.cm
-.am
-
 # Reference: https://thetinhat.com/tutorials/darknets/i2p.html
 # (note: just for lost (non-SOCKS) I2P domain lookups)
 
 .i2p
-
-# Reference: https://blog.malwarebytes.org/online-security/2014/09/malicious-activity-observed-in-new-top-level-domains/
-
-.pictures
-.consulting
-.xyz
-.club
-.solutions
-.domains
-.company
-.photos
-.directory
-.enterprises
-.guru
-
-# Reference: https://ntldstats.com/fraud
-
-.link
-.click
-.work
 
 # Reference: https://uni.me/
 
@@ -96,19 +77,6 @@ cnc-cs.com
 # Reference: https://en.wikipedia.org/wiki/.gu
 
 .gu
-
-# Reference: https://lifars.com/2015/09/the-internets-most-malicious-domains/
-
-.zip
-.review
-.country
-.kim
-.cricket
-.science
-.work
-.party
-.gq
-.link
 
 # Reference: http://changelog.ca/log/2000/04/07/free-third-level-domain-name-roundup
 
@@ -1121,27 +1089,6 @@ zx9.de
 co.cc
 co.be
 
-# Reference: http://www.networkworld.com/article/3091754/security/the-new-internet-domains-are-a-wasteland.html
-
-.xyz
-.domain
-.website
-.review
-.club
-.date
-.racing
-.download
-.top
-.gdn
-.bid
-.museum
-.mobi
-.stream
-
-# Reference: https://blog.talosintelligence.com/2018/08/threat-roundup-0803-0810.html
-
-.men
-
 # Reference: http://trojanedbinaries.com/security/dynamicdns/<dir>/
 
 0rg.fr
@@ -1149,28 +1096,19 @@ co.be
 1866.co
 1s.fr
 2010.tk
-2288.org
 2u.se
-3322.net
-3322.org
 3322.org.cn
 345.pl
 5166.info
 62ip.net
-6600.org
 66ip.net
 68ip.net
-7766.org
 80port.net
-8800.org
-8866.org
 8s.nl
-9966.org
 aa.am
 ae.am
 aelita.fr
 air.ai
-altervista.org
 aq.pl
 ass0.fr
 assexyas.com
@@ -1249,7 +1187,6 @@ de.tf
 dhis.org
 dk.tc
 dns0755.net
-dy.fi
 dynamicdomain.net
 dzw.tv
 edu.tc
@@ -1496,14 +1433,6 @@ ze.tc
 zeg.cc
 zicp.net
 zik.dj
-
-# Reference: https://twitter.com/ps66uk/status/1037866649435729921
-
-.fun
-
-# Reference: https://twitter.com/58_158_177_102/status/1087514326607355904
-
-.accountant
 
 # Reference: https://twitter.com/malwaremustd1e/status/1122003608927494145
 
@@ -2060,7 +1989,6 @@ bc.edu.mx
 bccompany.biz
 beng.biz
 biggs.com
-bit.org
 bitbox.com
 biz.hk
 bmc-group.com
@@ -4505,7 +4433,6 @@ zziesworld.com
 000webhost.com
 80port.net
 3322.net
-altervista.org
 azote.org
 bee.pl
 biz.nf
@@ -4531,7 +4458,6 @@ dhis.org
 dnserver.com
 dot.tk
 dy.fi
-eu.org
 europnic.com
 freeavailabledomains.com
 gv.vg
@@ -4621,10 +4547,6 @@ essey.site
 
 icodework.com
 
-# Reference: https://www.virustotal.com/gui/domain/dnainternet.fi/relations
-
-dnainternet.fi
-
 # Reference: https://www.virustotal.com/gui/domain/s.co/relations
 
 s.co
@@ -4682,3 +4604,418 @@ bcn-pool.us
 # Reference: https://www.virustotal.com/gui/domain/killwaf.com/relations
 
 killwaf.com
+
+# Reference: https://www.virustotal.com/gui/domain/vzglagtime.net/relations
+
+vzglagtime.net
+
+# Reference: https://blog.sucuri.net/2019/07/fake-google-domains-used-in-evasive-magento-skimmer.html
+
+lnfo.cc
+
+# Reference: https://www.virustotal.com/gui/domain/strust.club/relations
+
+strust.club
+
+# Reference: https://www.virustotal.com/gui/domain/foxdos.cc/details
+
+foxdos.cc
+
+# Reference: https://www.virustotal.com/gui/domain/5sfox.com/relations
+
+5sfox.com
+
+# Reference: https://twitter.com/bad_packets/status/1158447574077960192
+# Reference: https://www.virustotal.com/gui/ip-address/45.88.201.252/relations
+
+8chan.co
+8ch.net
+
+# Reference: https://twitter.com/ScumBots/status/1160853968681144321
+
+gws.kr
+
+# Reference: https://www.virustotal.com/gui/domain/myihor.ru/relations
+
+myihor.ru
+
+# Reference: https://www.virustotal.com/gui/domain/securezdns.pw/relations
+
+securezdns.pw
+
+# Reference: https://securelist.com/dropper-in-google-play/92496/
+# Reference: https://otx.alienvault.com/pulse/5d655dfaa30d3ef9d3192d81
+# Reference: https://www.virustotal.com/gui/domain/abcdserver.com/relations
+
+abcdserver.com
+
+# Reference: https://twitter.com/KorbenD_Intel/status/1169996681259245569
+# Reference: https://www.virustotal.com/gui/domain/daniel2you.com/relations
+
+daniel2you.com
+
+# Reference: https://twitter.com/io_sono_io_IT/status/1170623641911906306
+# Reference: https://www.virustotal.com/gui/ip-address/104.151.46.71/relations
+
+.ac.cn
+cgzolm.cn
+chaao.cc
+fxgdb.cn
+rengpu.cc
+sengba.cc
+
+# Reference: https://twitter.com/rpsanch/status/1170906488677851137
+
+unicef-cummunity.com
+
+# Reference: https://www.virustotal.com/gui/domain/mtcc.me/relations
+
+mtcc.me
+
+# Reference: https://www.fortinet.com/blog/threat-research/zegost-campaign-targets-internal-interests.html
+# Reference: https://www.virustotal.com/gui/domain/heikc.com/relations
+
+heikc.com
+
+# Reference: https://twitter.com/nullcookies/status/1172225447427489792
+
+ifast.live
+
+# Reference: https://www.virustotal.com/gui/domain/sdns.se/relations
+
+sdns.se
+
+# Reference: https://www.virustotal.com/gui/domain/nullroute.pw/relations
+
+nullroute.pw
+
+# Reference: https://www.virustotal.com/gui/domain/siliconrouting.pw/relations 
+
+siliconrouting.pw
+
+# Reference: https://www.virustotal.com/gui/domain/baepaws.ru/relations
+
+baepaws.ru
+
+# Reference: https://www.virustotal.com/gui/domain/ultimate-discounter.com/relations
+
+ultimate-discounter.com
+
+# Reference: https://www.virustotal.com/gui/domain/qarallax.com/relations
+
+qarallax.com
+
+# Reference: # Reference: https://meltx0r.github.io/tech/2019/09/19/emissary-panda-apt.html
+# Reference: https://www.virustotal.com/gui/domain/dellrescue.com/relations
+# Reference: https://www.virustotal.com/gui/domain/redhatupdater.com/relations
+
+dellrescue.com
+redhatupdater.com
+
+# Reference: https://twitter.com/KesaGataMe0/status/1175753787857784834
+
+.cards
+
+# Reference: https://blog.trendmicro.com/trendlabs-security-intelligence/fileless-cryptocurrency-miner-ghostminer-weaponizes-wmi-objects-kills-other-cryptocurrency-mining-payloads/
+# Reference: https://www.virustotal.com/gui/domain/heroherohero.in/relations
+# Reference: https://www.virustotal.com/gui/domain/ctosus.ru/relations
+
+ctosus.ru
+heroherohero.in
+
+# Reference: https://github.com/advanced-threat-research/IOCs/blob/master/2012/2012-09-20-ngrbot-spreads-via-chat/ngrbot-spreads-via-chat.csv
+# Reference: https://www.virustotal.com/gui/domain/zaberno.com/relations
+
+zaberno.com
+
+# Reference: https://randed.com/typosquatting-attacks/?lang=en
+# Reference: https://github.com/advanced-threat-research/IOCs/blob/master/2016/2016-01-14-typosquatting-attacks-alive-well-unfortunately/typosquatting-attacks-alive-well-unfortunately.csv
+
+criagslist.com
+youutbe.com
+youtupe.com
+
+# Reference: https://github.com/advanced-threat-research/IOCs/blob/master/2018/2018-03-02-mcafee-uncovers-operation-honeybee-malicious-document-campaign-targeting-humanitarian-aid-groups/mcafee-uncovers-operation-honeybee-malicious-document-campaign-targeting-humanitarian-aid-groups.csv
+https://blog.trendmicro.com/trendlabs-security-intelligence/syscon-backdoor-uses-ftp-as-a-cc-channel/
+# Reference: https://www.virustotal.com/gui/domain/byethost12.com/details
+
+byethost11.com
+byethost12.com
+byethost17.com
+byethost3.com
+byethost31.com
+byethost[0-9]+\.com
+
+# Reference: https://twitter.com/Racco42/status/1017007079813451778
+# Reference: https://www.virustotal.com/gui/domain/tym-internationals.com/relations
+
+tym-internationals.com
+
+# Reference: https://twitter.com/luc4m/status/1073257560625569792
+# Reference: https://www.virustotal.com/gui/domain/unknowncrypter.com/relations
+
+unknowncrypter.com
+
+# Reference: https://www.virustotal.com/gui/domain/zzjzpt.com/relations
+
+zzjzpt.com
+
+# Reference: https://www.virustotal.com/gui/domain/xyzledlight.com/relations
+
+xyzledlight.com
+
+# Reference: https://www.virustotal.com/gui/domain/olk4.com/relations
+
+olk4.com
+
+# Reference: https://www.virustotal.com/gui/domain/member-authorize.com/relations
+
+member-authorize.com
+
+# Reference: https://twitter.com/albertzsigovits/status/1182657546550730752
+# Reference: https://github.com/silence-is-best/c2db/blob/master/README.md#krugbot
+
+.wtf
+
+# Reference: https://www.virustotal.com/gui/domain/justns.ru/relations
+
+justns.ru
+
+# Root domains from changeup.txt trail
+
+chopbell.com
+chopbell.net
+couchness.com
+datetoday1.com
+datetoday1.net
+datetoday1.org
+datetoday2.com
+datetoday2.net
+datetoday2.org
+datetoday3.com
+datetoday3.net
+datetoday3.org
+helpchecks.com
+helpchecks.net
+helpupdated.net
+helpupdated.org
+helpupdatek.at
+helpupdatek.eu
+helpupdatek.tw
+helpupdater.net
+helpupdates.com
+helpupdates.net
+mediashares.org
+player1253.com
+player1532.com
+thepicturehut.net
+timedate1.com
+timedate1.net
+timedate1.org
+timedate2.com
+timedate2.net
+timedate2.org
+timedate3.com
+timedate3.net
+timedate3.org
+videoall.net
+videoall.org
+
+# Reference: https://www.virustotal.com/gui/domain/lq4444.com/relations
+
+lq4444.com
+
+# Reference: https://www.kernelmode.info/forum/viewtopic.php?p=26363#p26363
+
+39aj.com
+39jia.com
+91yingcai.com
+astpbx.com
+astpbx.org
+authyun.com
+authyun.net
+authyun.org
+bentium.com
+c0188.com
+cnrss.net
+czdjbh.com
+czdjbh.net
+czdjbh.org
+eajia.net
+foxyun.com
+guilib.com
+guilib.net
+guilib.org
+guqiaow.com
+gzjtjl.com
+holdlion.com
+holdlion.net
+kccef.com
+lishinet.com
+longchengmetal.com
+mz668.net
+nbvox.com
+nbvox.net
+nbvox.org
+pubyun.org
+qmwifi.com
+qmwifi.net
+qmwifi.org
+rpqq.com
+rssgate.com
+sns188.com
+tongluda.com
+vpn39.com
+vps39.com
+wxyh.org
+xuehongliang.com
+yaako.net
+yangchequ.com
+zhuceyun.com
+zhuceyun.net
+zhuceyun.org
+
+# Reference: https://www.welivesecurity.com/wp-content/uploads/2019/10/ESET_Winnti.pdf
+# Reference: https://otx.alienvault.com/pulse/5da4528788ac7149ce4894b7
+
+7release.com
+ahnlabinc.com
+dyn-dns.co
+dyn-dns.com
+
+# Reference: https://www.virustotal.com/gui/domain/wm01.to/relations
+
+wm01.to
+
+# Reference: https://twitter.com/kyleehmke/status/1184120287199223808
+# Reference: https://www.virustotal.com/gui/domain/jmttrading.org/relations
+
+jmttrading.org
+
+# Reference: https://www.fireeye.com/blog/threat-research/2014/09/darwins-favorite-apt-group-2.html
+# Reference: https://github.com/fireeye/iocs/tree/master/APT12
+# Reference: https://www.virustotal.com/gui/domain/csmcpr.com/relations
+
+csmcpr.com
+
+# Reference: https://www.fireeye.com/blog/threat-research/2015/05/hiding_in_plain_sigh.html
+# Reference: https://github.com/fireeye/iocs/blob/master/APT17/7b9e87c5-b619-4a13-b862-0145614d359a.ioc
+# Reference: https://www.virustotal.com/gui/domain/wordraference.com/relations
+
+wordraference.com
+
+# Reference: https://www.virustotal.com/gui/domain/kuai-go.com/relations
+# Reference: https://www.virustotal.com/gui/domain/zhzy999.net/relations
+
+kuai-go.com
+zhzy999.net
+
+https://blog.trendmicro.com/trendlabs-security-intelligence/plugx-rat-with-time-bomb-abuses-dropbox-for-command-and-control-settings/
+
+firefox-sync.com
+heritageblog.org
+
+# Reference: https://www.virustotal.com/gui/domain/dgvpn.com/relations
+
+dgvpn.com
+
+# Reference: https://www.virustotal.com/gui/domain/blogoveg.org/relations
+
+blogoveg.org
+
+# Reference: https://www.virustotal.com/gui/domain/g1ee.com/relations
+
+g1ee.com
+
+# Reference: https://www.virustotal.com/gui/domain/easydns.com/relations
+# Reference: https://www.virustotal.com/gui/domain/easydns.net/relations
+# Reference: https://www.virustotal.com/gui/domain/easydns.org/relations
+# Reference: https://www.virustotal.com/gui/domain/eluma101.com/relations
+
+easydns.com
+easydns.net
+easydns.org
+eluma101.com
+
+# Reference: https://pastebin.com/29uSdMAk
+# Reference: https://www.virustotal.com/gui/file/ff0fb3dbc9170b42ca07bcbcca2c90dbe7e28eed7a6f8861cc91fcef691726d7/detection
+
+climatechangeawareness.uk
+
+# Reference: https://www.virustotal.com/gui/domain/virus.eu/relations
+
+virus.eu
+
+# Reference: https://www.virustotal.com/gui/domain/markdutchinc.com/relations
+
+markdutchinc.com
+
+# Reference: https://twitter.com/ScumBots/status/1191172548119142400
+
+.lol
+
+# Reference: https://www.virustotal.com/gui/domain/atwebpages.com/relations
+
+atwebpages.com
+
+# Reference: https://www.virustotal.com/gui/domain/ziraat-helpdesk.com/relations
+# Reference: https://www.virustotal.com/gui/domainagrillcs.com/relations
+# Reference: https://www.virustotal.com/gui/domain/haoldd.com/relations
+# Reference: https://www.virustotal.com/gui/domain/justinstalledpanel.com/relations
+
+agrillcs.com
+haoldd.com
+justinstalledpanel.com
+ziraat-helpdesk.com
+
+# Reference: https://app.any.run/tasks/90e9809c-d3c5-4e93-b364-6ec4911c2e3e/
+
+piytrwd.com
+
+# Reference: https://www.virustotal.com/gui/domain/5b6b7b.ru/relations
+
+5b6b7b.ru
+
+# Reference: https://www.virustotal.com/gui/domain/ruisgood.ru/relations
+
+ruisgood.ru
+
+# Reference: https://silascutler.blogspot.com/2019/11/fresh-plugx-october-2019.html
+# Reference: https://otx.alienvault.com/pulse/5dd2b17f1b7dcef51f0ed38d
+
+microsoftdepot.com
+suspendedio.com
+updatesrvers.org
+
+# Reference: https://twitter.com/sh1shk0va/status/1205511108582354944
+
+djmixer2018.com
+
+# Reference: https://www.virustotal.com/gui/file/f7edd692ac35829762b96a55223940e8993e4dc1b854be285efe4b50e8be0b8d/detection
+# Reference: https://www.virustotal.com/gui/domain/newrelic.com/relations
+
+newrelic.com
+
+# Reference: https://www.virustotal.com/gui/domain/speedfastmaking.com/relations
+
+speedfastmaking.com
+
+# Reference: https://www.virustotal.com/gui/domain/banquealtantique.net/relations
+
+banquealtantique.net
+
+# Reference: https://www.virustotal.com/gui/domain/hitlers.best/relations
+
+hitlers.best
+
+# Reference: https://www.virustotal.com/gui/domain/n-e.kr/relations
+
+n-e.kr
+
+# Reference: https://www.virustotal.com/gui/domain/cfxcheats.com/relations
+
+cfxcheats.com
+
+# Reference: https://www.virustotal.com/gui/domain/xcheats.cf/relations
+
+xcheats.cf

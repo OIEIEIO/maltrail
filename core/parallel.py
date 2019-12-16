@@ -1,4 +1,4 @@
-#!/usr/bin/env python2
+#!/usr/bin/env python
 
 """
 Copyright (c) 2014-2019 Maltrail developers (https://github.com/stamparm/maltrail/)
@@ -72,7 +72,7 @@ def worker(buffer, n, offset, mod, process_packet):
 
     update_timer()
 
-    count = 0L
+    count = 0
     while True:
         try:
             if (count % mod) == offset:

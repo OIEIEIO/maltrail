@@ -1,14 +1,16 @@
-#!/usr/bin/env python2
+#!/usr/bin/env python
 
 """
 Copyright (c) 2014-2019 Maltrail developers (https://github.com/stamparm/maltrail/)
 See the file 'LICENSE' for copying permission
 """
+from __future__ import print_function
 
+import datetime
 import os
+import re
 import signal
 import socket
-import SocketServer
 import sys
 import threading
 import time
@@ -16,6 +18,7 @@ import traceback
 
 from core.common import check_whitelisted
 from core.common import check_sudo
+from core.compat import xrange
 from core.enums import TRAIL
 from core.settings import CEF_FORMAT
 from core.settings import config
@@ -26,19 +29,22 @@ from core.settings import DEFAULT_EVENT_LOG_PERMISSIONS
 from core.settings import HOSTNAME
 from core.settings import NAME
 from core.settings import TIME_FORMAT
+from core.settings import UNICODE_ENCODING
 from core.settings import VERSION
 from core.ignore import ignore_event
+from thirdparty.six.moves import socketserver as _socketserver
 
 _condensed_events = {}
 _condensing_thread = None
 _condensing_lock = threading.Lock()
+_single_messages = set()
 _thread_data = threading.local()
 
 def create_log_directory():
     if not os.path.isdir(config.LOG_DIR):
         if not config.DISABLE_CHECK_SUDO and check_sudo() is False:
             exit("[!] please rerun with sudo/Administrator privileges")
-        os.makedirs(config.LOG_DIR, 0755)
+        os.makedirs(config.LOG_DIR, 0o755)
     print("[i] using '%s' for log storage" % config.LOG_DIR)
 
 def get_event_log_handle(sec, flags=os.O_APPEND | os.O_CREAT | os.O_WRONLY, reuse=True):
@@ -74,7 +80,7 @@ def get_event_log_handle(sec, flags=os.O_APPEND | os.O_CREAT | os.O_WRONLY, reus
 
 def get_error_log_handle(flags=os.O_APPEND | os.O_CREAT | os.O_WRONLY):
     if not hasattr(_thread_data, "error_log_handle"):
-        _ = os.path.join(config.LOG_DIR, "error.log")
+        _ = os.path.join(config.get("LOG_DIR") or os.curdir, "error.log")
         if not os.path.exists(_):
             open(_, "w+").close()
             os.chmod(_, DEFAULT_ERROR_LOG_PERMISSIONS)
@@ -86,6 +92,7 @@ def safe_value(value):
     retval = str(value or '-')
     if any(_ in retval for _ in (' ', '"')):
         retval = "\"%s\"" % retval.replace('"', '""')
+    retval = re.sub(r"[\x0a\x0d]", " ", retval)
     return retval
 
 def flush_condensed_events():
@@ -130,7 +137,7 @@ def log_event(event_tuple, packet=None, skip_write=False, skip_condensing=False)
         sec, usec, src_ip, src_port, dst_ip, dst_port, proto, trail_type, trail, info, reference = event_tuple
         if ignore_event(event_tuple):
             return
-        
+
         if not (any(check_whitelisted(_) for _ in (src_ip, dst_ip)) and trail_type != TRAIL.DNS):  # DNS requests/responses can't be whitelisted based on src_ip/dst_ip
             if not skip_write:
                 localtime = "%s.%06d" % (time.strftime(TIME_FORMAT, time.localtime(int(sec))), usec)
@@ -145,7 +152,7 @@ def log_event(event_tuple, packet=None, skip_write=False, skip_condensing=False)
 
                         return
 
-                current_bucket = sec / config.PROCESS_COUNT
+                current_bucket = sec // config.PROCESS_COUNT
                 if getattr(_thread_data, "log_bucket", None) != current_bucket:  # log throttling
                     _thread_data.log_bucket = current_bucket
                     _thread_data.log_trails = set()
@@ -159,7 +166,7 @@ def log_event(event_tuple, packet=None, skip_write=False, skip_condensing=False)
                 event = "%s %s %s\n" % (safe_value(localtime), safe_value(config.SENSOR_NAME), " ".join(safe_value(_) for _ in event_tuple[2:]))
                 if not config.DISABLE_LOCAL_LOG_STORAGE:
                     handle = get_event_log_handle(sec)
-                    os.write(handle, event)
+                    os.write(handle, event.encode(UNICODE_ENCODING))
 
                 if config.LOG_SERVER:
                     if config.LOG_SERVER.count(':') > 1:
@@ -175,16 +182,16 @@ def log_event(event_tuple, packet=None, skip_write=False, skip_condensing=False)
                         _address = (remote_host, int(remote_port))
 
                     s = socket.socket(socket.AF_INET if len(_address) == 2 else socket.AF_INET6, socket.SOCK_DGRAM)
-                    s.sendto("%s %s" % (sec, event), _address)
+                    s.sendto(("%s %s" % (sec, event)).encode(UNICODE_ENCODING), _address)
 
                 if config.SYSLOG_SERVER:
                     extension = "src=%s spt=%s dst=%s dpt=%s trail=%s ref=%s" % (src_ip, src_port, dst_ip, dst_port, trail, reference)
                     _ = CEF_FORMAT.format(syslog_time=time.strftime("%b %d %H:%M:%S", time.localtime(int(sec))), host=HOSTNAME, device_vendor=NAME, device_product="sensor", device_version=VERSION, signature_id=time.strftime("%Y-%m-%d", time.localtime(os.path.getctime(config.TRAILS_FILE))), name=info, severity=0, extension=extension)
                     remote_host, remote_port = config.SYSLOG_SERVER.split(':')
                     s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
-                    s.sendto(_, (remote_host, int(remote_port)))
+                    s.sendto(_.encode(UNICODE_ENCODING), (remote_host, int(remote_port)))
 
-                if config.DISABLE_LOCAL_LOG_STORAGE and not any(config.LOG_SERVER, config.SYSLOG_SERVER) or config.console:
+                if (config.DISABLE_LOCAL_LOG_STORAGE and not any((config.LOG_SERVER, config.SYSLOG_SERVER))) or config.console:
                     sys.stderr.write(event)
                     sys.stderr.flush()
 
@@ -195,23 +202,39 @@ def log_event(event_tuple, packet=None, skip_write=False, skip_condensing=False)
         if config.SHOW_DEBUG:
             traceback.print_exc()
 
-def log_error(msg):
+def log_error(msg, single=False):
+    if single:
+        if msg in _single_messages:
+            return
+        else:
+            _single_messages.add(msg)
+
     try:
         handle = get_error_log_handle()
-        os.write(handle, "%s %s\n" % (time.strftime(TIME_FORMAT, time.localtime()), msg))
+        os.write(handle, ("%s %s\n" % (time.strftime(TIME_FORMAT, time.localtime()), msg)).encode(UNICODE_ENCODING))
     except (OSError, IOError):
         if config.SHOW_DEBUG:
             traceback.print_exc()
 
 def start_logd(address=None, port=None, join=False):
-    class ThreadingUDPServer(SocketServer.ThreadingMixIn, SocketServer.UDPServer):
+    class ThreadingUDPServer(_socketserver.ThreadingMixIn, _socketserver.UDPServer):
         pass
 
-    class UDPHandler(SocketServer.BaseRequestHandler):
+    class UDPHandler(_socketserver.BaseRequestHandler):
         def handle(self):
             try:
                 data, _ = self.request
-                sec, event = data.split(" ", 1)
+
+                if data[0:1].isdigit():     # Note: regular format with timestamp in front
+                    sec, event = data.split(b' ', 1)
+                else:                       # Note: naive format without timestamp in front
+                    event_date = datetime.datetime.strptime(data[1:data.find(b'.')].decode(UNICODE_ENCODING), TIME_FORMAT)
+                    sec = int(time.mktime(event_date.timetuple()))
+                    event = data
+
+                if not event.endswith(b'\n'):
+                    event = b"%s\n" % event
+
                 handle = get_event_log_handle(int(sec), reuse=False)
                 os.write(handle, event)
                 os.close(handle)
@@ -223,7 +246,7 @@ def start_logd(address=None, port=None, join=False):
     if ':' in (address or ""):
         address = address.strip("[]")
 
-        SocketServer.UDPServer.address_family = socket.AF_INET6
+        _socketserver.UDPServer.address_family = socket.AF_INET6
 
         # Reference: https://github.com/squeaky-pl/zenchmarks/blob/master/vendor/twisted/internet/tcp.py
         _AI_NUMERICSERV = getattr(socket, "AI_NUMERICSERV", 0)
@@ -235,7 +258,7 @@ def start_logd(address=None, port=None, join=False):
 
     server = ThreadingUDPServer(_address, UDPHandler)
 
-    print "[i] running UDP server at '%s:%d'" % (server.server_address[0], server.server_address[1])
+    print("[i] running UDP server at '%s:%d'" % (server.server_address[0], server.server_address[1]))
 
     if join:
         server.serve_forever()
