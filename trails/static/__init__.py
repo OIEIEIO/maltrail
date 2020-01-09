@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 
 """
-Copyright (c) 2014-2019 Maltrail developers (https://github.com/stamparm/maltrail/)
+Copyright (c) 2014-2020 Maltrail developers (https://github.com/stamparm/maltrail/)
 See the file 'LICENSE' for copying permission
 """
 
@@ -18,7 +18,7 @@ def fetch():
     retval = {}
 
     directories = [os.path.dirname(__file__)] + glob.glob(os.path.join(os.path.dirname(__file__), "*"))
-    directories = sorted(directories, key=lambda _: -1 if "suspicious" in _ else int("custom" in _))
+    directories = sorted(directories, key=lambda _: -1 if any(__ in _ for __ in ("suspicious", "malicious")) else int("custom" in _))
 
     for directory in directories:
         if not os.path.isdir(directory):

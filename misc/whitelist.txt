@@ -1,4 +1,4 @@
-# Copyright (c) 2014-2019 Maltrail developers (https://github.com/stamparm/maltrail/)
+# Copyright (c) 2014-2020 Maltrail developers (https://github.com/stamparm/maltrail/)
 # See the file 'LICENSE' for copying permission
 
 localhost
@@ -178,6 +178,7 @@ takprosto.cc
 tawk.to
 testanalytics.net
 testflightapp.com
+torrent.eu.org
 trendmicro.com
 tumblr.com
 twitter.com
@@ -314,6 +315,47 @@ emediate.dk
 pinterest.com
 tinypic.com
 s3.amazonaws.com
+
+# appeared on dshield.org
+
+microsoftonline.com
+rlcdn.com
+quantserve.com
+krxd.net
+taobao.com
+contextweb.com
+addthisedge.com
+optimizely.com
+segment.io
+criteo.com
+crwdcntrl.net
+adobedtm.com
+paypal.com
+qq.com
+exelator.com
+avocet.io
+tapad.com
+crazyegg.com
+ytimg.com
+pubmatic.com
+dailymail.co.uk
+chartbeat.com
+twimg.com
+amung.us
+jwpcdn.com
+a-ads.com
+go-mpulse.net
+youtu.be
+mandrillapp.com
+staticimgfarm.com
+adsafeprotected.com
+onclickads.net
+mochiads.com
+sharethis.com
+bankofamerica.com
+usbank.com
+media.net
+wp.com
 
 # appeared on malwaremustdie.org
 
@@ -1024,6 +1066,14 @@ yaroslavl.su
 adult.xyz
 best-journal.xyz
 ytmp3.cc
+balancers.42.wix.com
+ding.wix.com
+progallery.wix.com
+apps.wix.com
+ecom.wix.com
+social-blog.wix.com
+dc11.wix.com
+sslstatic.wix.com
 
 # NS of afraid.org
 
@@ -1105,6 +1155,7 @@ lupus-bra.com
 rotumal.com
 red-gate.com
 clicksor.com
+as2pawnib8ib.com
 
 # Google crawlers
 
@@ -2545,3 +2596,83 @@ wps.cn
 # Reference: https://www.virustotal.com/gui/domain/security-research.dyndns.org/relations
 
 security-research.dyndns.org
+
+# Reference: https://raw.githubusercontent.com/ACINQ/electrum-lib/master/src/main/resources/electrum/servers_mainnet.json
+# Note: Electrum servers
+
+3smoooajg7qqac2y.onion
+81-7-10-251.blue.kundencontroller.de
+bauerjda5hnedjam.onion
+bauerjhejlv6di7s.onion
+bitcoin3nqy3db7c.onion
+bitcoin.corgi.party
+bitcoins.sk
+b.ooze.cc
+btc.cihar.com
+btc.smsys.me
+btc.xskyx.net
+cashyes.zapto.org
+currentlane.lovebitco.in
+daedalus.bauerj.eu
+dedi.jochen-hoenicke.de
+dragon085.startdedicated.de
+e-1.claudioboxx.com
+e.keff.org
+elec.luggs.co
+electrum2.eff.ro
+electrum2.villocq.com
+electrum3.hachre.de
+electrum.eff.ro
+electrum.festivaldelhumor.org
+electrum.hsmiths.com
+electrum.leblancnet.us
+electrum.mindspot.org
+electrum.qtornado.com
+electrum-server.ninja
+electrum.taborsky.cz
+electrum-unlimited.criptolayer.net
+electrum.villocq.com
+electrumx.bot.nu
+electrumx.ddns.net
+electrumx.ftp.sh
+electrumxhqdsmlu.onion
+electrumx.ml
+electrumx.nmdps.net
+electrumx.soon.it
+elx01.knas.systems
+enode.duckdns.org
+erbium1.sytes.net
+E-X.not.fyi
+fedaykin.goip.de
+fn.48.org
+helicarrier.bauerj.eu
+hsmiths4fyqlw5xw.onion
+hsmiths5mjk6uijs.onion
+icarus.tetradrachm.net
+kirsche.emzy.de
+luggscoqbymhvnkp.onion
+MEADS.hopto.org
+ndnd.selfhost.eu
+ndndword5lpb7eex.onion
+oneweek.duckdns.org
+orannis.com
+ozahtqwp25chjdjd.onion
+qtornadoklbgdyww.onion
+rbx.curalle.ovh
+s7clinmo4cazmhul.onion
+tardis.bauerj.eu
+technetium.network
+tomscryptos.com
+ulrichard.ch
+us.electrum.be
+vmd27610.contaboserver.net
+vmd30612.contaboserver.net
+VPS.hsmiths.com
+wsw6tua3xl24gsmi264zaep6seppjyrkyucpsmuxnjzyt3f3j6swshad.onion
+xray587.startdedicated.de
+yuio.top
+
+# Exceptions for android_roamingmantis detection regex
+
+hf-hd.top
+nn-mod.top

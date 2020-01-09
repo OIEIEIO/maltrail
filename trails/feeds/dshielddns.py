@@ -1,13 +1,13 @@
 #!/usr/bin/env python
 
 """
-Copyright (c) 2014-2019 Maltrail developers (https://github.com/stamparm/maltrail/)
+Copyright (c) 2014-2020 Maltrail developers (https://github.com/stamparm/maltrail/)
 See the file 'LICENSE' for copying permission
 """
 
 from core.common import retrieve_content
 
-__url__ = "https://isc.sans.edu/feeds/suspiciousdomains_Low.txt"
+__url__ = "https://isc.sans.edu/feeds/suspiciousdomains_High.txt"
 __check__ = "DShield.org"
 __info__ = "domain (suspicious)"
 __reference__ = "dshield.org"

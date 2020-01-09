@@ -1,4 +1,4 @@
-# Copyright (c) 2014-2019 Maltrail developers (https://github.com/stamparm/maltrail/)
+# Copyright (c) 2014-2020 Maltrail developers (https://github.com/stamparm/maltrail/)
 # See the file 'LICENSE' for copying permission
 
 # Reference: https://securelist.com/roaming-mantis-part-iv/90332/
@@ -752,3 +752,7 @@ ns2.dnshost.ga
 
 192.3.207.10:53
 198.46.234.210:53
+
+# Reference: https://twitter.com/ninoseki/status/1207634830927679488
+
+107.155.152.15:53

@@ -1,4 +1,4 @@
-# Copyright (c) 2014-2019 Maltrail developers (https://github.com/stamparm/maltrail/)
+# Copyright (c) 2014-2020 Maltrail developers (https://github.com/stamparm/maltrail/)
 # See the file 'LICENSE' for copying permission
 
 # Suspicious user-agent regular expressions
@@ -1167,3 +1167,75 @@ DMFR
 # Reference: https://twitter.com/cyber__sloth/status/1200366623615594497
 
 51c778909b52d45286a175a24e8daf42cb6dbe43eb
+
+# Reference: https://twitter.com/pollo290987/status/1112921683592187904
+
+Mozilla 6\.0
+
+# Reference: https://twitter.com/bad_packets/status/1208656547271675905
+# Reference: https://twitter.com/bad_packets/status/1208656547271675905/photo/2
+
+ouija_a.rc
+ouija_a.rm
+ouija_a.rm4
+ouija_a.rm4l
+ouija_a.rm4t
+ouija_a.rm4tl
+ouijaa.rm4tll
+ouija_a.rmv4l
+ouija_a.rm5
+ouija_a.rm5n
+ouija_a.rm6
+ouija_a.rm64
+ouija_a.rm7
+ouija_d.bg
+ouija_e.xploit
+ouija_i.486
+ouija_i.586
+ouija_i.686
+ouija_m.68k
+ouija_m.ips
+ouija_m.ips64
+ouija_m.psl
+ouija_m.ipsel
+ouija_p.pc
+ouija_p.pc2
+ouija_p.pc440
+ouija_p.owerppc
+ouija_r.oot
+ouija_r.oot32
+ouija_s.h4
+ouija_s.sh4
+ouija_s.pc
+ouija_s.parc
+ouija_x.32
+ouija_x.64
+ouija_x.86
+ouija_x.86_32
+ouija_x.86_64 
+
+# Reference: https://exchange.xforce.ibmcloud.com/collection/Kryptik-FusionCore-ICLoader-Malware-Campaign-via-AWS-IP-e2fa5296f88a0c4ad37e4f4652c221db
+
+Christmas Mystery
+Install Capital
+
+# Reference: http://plok1.blogspot.com/2018/02/a-new-spreader-with-mimikatz.html
+
+WinHTTP loader/1.0
+
+# Reference: https://devcentral.f5.com/s/articles/is-xmaker-the-new-trickloader-24372
+# Reference: https://twitter.com/VK_Intel/status/1213253987492864000/photo/2
+
+BotLoader
+KEFIR
+TrickLoader
+WinLoader
+Xmaker
+
+# Reference: https://twitter.com/c3rb3ru5d3d53c/status/1213878934514864128
+
+undefined
+
+# Reference: https://twitter.com/bad_packets/status/1214701789649354752
+
+B4ckdoor

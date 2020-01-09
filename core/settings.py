@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 
 """
-Copyright (c) 2014-2019 Maltrail developers (https://github.com/stamparm/maltrail/)
+Copyright (c) 2014-2020 Maltrail developers (https://github.com/stamparm/maltrail/)
 See the file 'LICENSE' for copying permission
 """
 from __future__ import print_function
@@ -21,9 +21,10 @@ from core.trailsdict import TrailsDict
 from thirdparty.six.moves import urllib as _urllib
 
 NAME = "Maltrail"
-VERSION = "0.16.164"
+VERSION = "0.16.205"
 PLATFORM = os.name
 IS_WIN = PLATFORM == "nt"
+IS_SENSOR = sys.argv[0].startswith("sensor")
 SERVER_HEADER = "%s/%s" % (NAME, VERSION)
 DATE_FORMAT = "%Y-%m-%d"
 ROTATING_CHARS = ('\\', '|', '|', '/', '-')
@@ -326,7 +327,7 @@ def read_config(config_file):
     if config.UDP_ADDRESS is None and config.UDP_PORT is not None:
         exit("[!] usage of configuration value 'UDP_PORT' requires also usage of 'UDP_ADDRESS'")
 
-    if not str(config.HTTP_PORT or "").isdigit():
+    if not str(config.HTTP_PORT or "").isdigit() and not IS_SENSOR:
         exit("[!] invalid configuration value for 'HTTP_PORT' ('%s')" % ("" if config.HTTP_PORT is None else config.HTTP_PORT))
 
     if not str(config.UPDATE_PERIOD or "").isdigit():
